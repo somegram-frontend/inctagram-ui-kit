@@ -10,24 +10,53 @@ const meta = {
 
 export default meta
 
-export const Default = {
+export const Primary = {
   args: {
-    children: 'Default button',
+    children: 'Button',
+    disabled: false,
+    variant: 'primary',
   },
 }
 
-export const AlertOnClick = {
+export const Secondary = {
   args: {
-    children: 'Alert!',
-    onClick: () => alert('Button clicked'),
+    children: 'Button',
+    disabled: false,
+    variant: 'secondary',
   },
 }
 
-export const ButtonAsLink = {
+export const Outlined = {
+  args: {
+    children: 'Button',
+    disabled: false,
+    variant: 'outlined',
+  },
+}
+
+export const Borderless = {
+  args: {
+    children: 'Button',
+    disabled: false,
+    variant: 'borderless',
+  },
+}
+
+export const ButtonFullWidth = {
+  args: {
+    children: 'Button',
+    disabled: false,
+    fullWidth: true,
+    variant: 'primary',
+  },
+}
+
+export const ButtonTypeA = {
   args: {
     as: 'a',
-    children: 'This is a link',
-    href: 'https://google.com',
-    target: '_blank',
+    children: 'Button',
+    disabled: false,
+    href: 'https://www.google.ru/',
+    variant: 'primary',
   },
 }
