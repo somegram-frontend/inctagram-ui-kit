@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export function FillBellIcon(props: React.SVGProps<SVGSVGElement>) {
+export function Bell(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg fill={'currentColor'} height={'24px'} viewBox={'0 0 24 24'} width={'24px'} {...props}>
       <path
