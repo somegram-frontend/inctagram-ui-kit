@@ -16,4 +16,4 @@ export const Default: Story = {
   args: {
     isAuth: true,
   },
-}
+} satisfies Story
