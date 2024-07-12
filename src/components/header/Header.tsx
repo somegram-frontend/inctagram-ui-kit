@@ -1,6 +1,4 @@
-import React, { useState } from 'react'
-
-import styles from './header.module.scss'
+import s from './header.module.scss'
 
 import { Bell } from '../../assets/icons/Bell'
 import { EnglandFlag } from '../../assets/icons/EnglandFlag'
@@ -14,7 +12,7 @@ export const Header = ({ isAuth }: HeaderProps) => {
   const options = [
     {
       label: (
-        <div className={styles.flagContainer}>
+        <div className={s.flagContainer}>
           <EnglandFlag /> &nbsp; <span> English</span>
         </div>
       ),
@@ -22,7 +20,7 @@ export const Header = ({ isAuth }: HeaderProps) => {
     },
     {
       label: (
-        <div className={styles.flagContainer}>
+        <div className={s.flagContainer}>
           <RussianFlag />
           &nbsp;
           <span>Russian</span>
@@ -33,17 +31,17 @@ export const Header = ({ isAuth }: HeaderProps) => {
   ]
 
   return isAuth ? (
-    <header className={styles.header}>
-      <div className={styles.logo}>Somegram</div>
-      <nav className={styles.register}>
-        <div className={styles.bell}>
+    <header className={s.header}>
+      <div className={s.logo}>Somegram</div>
+      <nav className={s.register}>
+        <div className={s.bell}>
           <Bell />
         </div>
         <Select
-          className={styles.dropdown}
+          className={s.dropdown}
           options={options}
           placeholder={
-            <div className={styles.flagContainer}>
+            <div className={s.flagContainer}>
               <EnglandFlag /> &nbsp; <span> English</span>
             </div>
           }
@@ -51,21 +49,21 @@ export const Header = ({ isAuth }: HeaderProps) => {
       </nav>
     </header>
   ) : (
-    <header className={styles.header}>
-      <div className={styles.logo}>Somegram</div>
-      <nav className={styles.register}>
+    <header className={s.header}>
+      <div className={s.logo}>Somegram</div>
+      <nav className={s.register}>
         <Select
-          className={styles.dropdown}
+          className={s.dropdown}
           options={options}
           placeholder={
-            <div className={styles.flagContainer}>
+            <div className={s.flagContainer}>
               <EnglandFlag /> &nbsp; <span> English</span>
             </div>
           }
         />
-        <div className={styles.buttons}>
-          <button className={styles.button}>Log in</button>
-          <button className={styles.button}>Sign up</button>
+        <div className={s.buttons}>
+          <button className={s.button}>Log in</button>
+          <button className={s.button}>Sign up</button>
         </div>
       </nav>
     </header>
