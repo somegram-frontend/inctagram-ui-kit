@@ -11,6 +11,7 @@ type TypographyProps<E extends ElementType> = {
   variant?:
     | 'bold_text14'
     | 'bold_text16'
+    | 'error_text'
     | 'h1'
     | 'h2'
     | 'h3'

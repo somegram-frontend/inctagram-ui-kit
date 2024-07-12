@@ -87,3 +87,10 @@
   color: #397df6;
   text-decoration-line: underline;
 }
+
+.error_text {
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-m);
+  color: #cc1439;
+}

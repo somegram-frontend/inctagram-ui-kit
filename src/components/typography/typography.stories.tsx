@@ -19,7 +19,12 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof Typography>
 
-// export const Large: Story = {
+export const Default = {
+  args: {
+    children: 'Carosserie Test Zürich Stauffacherstrasse 31 8004 Zürich, ZH, CH',
+  },
+} satisfies Story
+
 export const Large = {
   args: {
     children: 'Carosserie Test Zürich Stauffacherstrasse 31 8004 Zürich, ZH, CH',
@@ -108,5 +113,12 @@ export const small_link = {
   args: {
     children: 'Carosserie Test Zürich Stauffacherstrasse 31 8004 Zürich, ZH, CH',
     variant: 'small_link',
+  },
+} satisfies Story
+
+export const error_text = {
+  args: {
+    children: 'Carosserie Test Zürich Stauffacherstrasse 31 8004 Zürich, ZH, CH',
+    variant: 'error_text',
   },
 } satisfies Story
