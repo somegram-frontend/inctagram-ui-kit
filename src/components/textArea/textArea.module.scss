@@ -1,0 +1,75 @@
+.container {
+  width: 100%;
+  min-width: 284px;
+}
+
+.textArea {
+  cursor: pointer;
+  width: 100%;
+  min-height: 84px;
+  padding: 6px 12px;
+  resize: none;
+  border: 1px solid var(--color-dark-100);
+  border-radius: 2px;
+  background-color: var(--color-dark-500);
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--color-light-100);
+  &:hover {
+    border-color: var(--color-dark-100);
+    color: var(--color-light-900);
+    &::placeholder {
+      color: var(--color-light-900);
+    }
+  }
+  &:focus-visible {
+    outline: none;
+    border: 2px solid var(--color-info-700);
+  }
+  &:active {
+    border-color: var(--color-light-100);
+  }
+  &::placeholder {
+    color: var(--color-light-900);
+  }
+  &.error {
+    border-color: var(--color-danger-500);
+  }
+  &:disabled {
+    color: var(--color-dark-100);
+    &::placeholder {
+      color: var(--color-dark-100);
+    }
+  }
+  &:active,
+  &:focus-visible,
+  &.error {
+    &::placeholder {
+      color: var(--color-light-100);
+    }
+  }
+}
+
+.errorText {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 171%;
+  color: var(--color-danger-500);
+}
+
+.label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 171%;
+  color: var(--color-light-900);
+}
+
+.disabled {
+  color: var(--color-dark-100);
+}
+
+.containerClassName {
+  width: 500px;
+}
