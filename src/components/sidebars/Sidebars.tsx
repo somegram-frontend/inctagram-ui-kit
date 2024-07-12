@@ -15,38 +15,44 @@ import {
 export const Sidebars = () => {
   return (
     <div className={s.box}>
-      <div className={s.contentBox}>
-        <div className={s.marginTop}></div>
+      <div className={s.content}>
         <ul>
           <li>
             <HomeIcon />
+            Home
           </li>
           <li>
             <CreateIcon />
+            Create
           </li>
           <li>
             <MyProfileIcon />
+            My Profile
           </li>
           <li>
             <MessengerIcon />
+            Messenger
           </li>
           <li>
             <SearchIcon />
+            Search
           </li>
         </ul>
-        <div className={s.marginBox}></div>
         <ul>
           <li>
             <StatisticIcon />
+            Statistics
           </li>
           <li>
             <FavoriteIcon />
+            Favorites
           </li>
         </ul>
-        <div className={s.largeMargin}></div>
+
         <ul>
-          <li className={s.content}>
+          <li>
             <LogOutIcon />
+            Log Out
           </li>
         </ul>
       </div>
