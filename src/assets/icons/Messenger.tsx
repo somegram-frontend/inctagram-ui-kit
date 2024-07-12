@@ -1,5 +1,5 @@
 import { type Ref, type SVGProps, forwardRef, memo } from 'react'
-const MessengerIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+export const MessengerIcon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     fill={'none'}
     height={'1em'}
