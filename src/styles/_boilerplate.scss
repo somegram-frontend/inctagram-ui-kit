@@ -3,6 +3,12 @@ html {
   font-size: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 
   /* scroll for Mozilla Firefox */
   @-moz-document url-prefix() {
@@ -47,12 +53,6 @@ html {
       background-color: var(--color-light-900);
     }
   }
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
 }
 
 input,
