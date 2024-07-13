@@ -3,6 +3,50 @@ html {
   font-size: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* scroll for Mozilla Firefox */
+  @-moz-document url-prefix() {
+    scrollbar-color: var(--color-dark-300) var(--color-dark-900);
+    scrollbar-width: thin;
+
+    :hover {
+      scrollbar-color: var(--color-light-900) var(--color-dark-900);
+    }
+  }
+
+  /* scroll for other browsers */
+
+  *::-webkit-scrollbar-track {
+    background-color: var(--color-dark-900);
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar:horizontal {
+    height: 10px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--color-dark-300);
+    border: 3px solid var(--color-dark-900);
+    border-radius: 3px;
+
+    :hover {
+      background-color: var(--color-light-900);
+    }
+  }
+
+  *::-webkit-scrollbar-thumb:horizontal {
+    background-color: var(--color-dark-300);
+    border: 3px solid var(--color-dark-900);
+    border-radius: 3px;
+
+    :hover {
+      background-color: var(--color-light-900);
+    }
+  }
 }
 
 *,
@@ -34,51 +78,7 @@ body {
 
   font-family: var(--font-family-primary), sans-serif;
   line-height: var(--line-height-m);
-  //color: var(--color-light-100);
+  color: var(--color-light-100);
 
-  //background-color: var(--color-dark-900);
-}
-
-/* scroll for Mozilla Firefox */
-@-moz-document url-prefix() {
-  scrollbar-color: var(--color-dark-300) var(--color-dark-900);
-  scrollbar-width: thin;
-
-  :hover {
-    scrollbar-color: var(--color-light-900) var(--color-dark-900);
-  }
-}
-
-/* scroll for other browsers */
-
-*::-webkit-scrollbar-track {
   background-color: var(--color-dark-900);
-}
-
-*::-webkit-scrollbar {
-  width: 10px;
-}
-
-*::-webkit-scrollbar:horizontal {
-  height: 10px;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: var(--color-dark-300);
-  border: 3px solid var(--color-dark-900);
-  border-radius: 3px;
-
-  :hover {
-    background-color: var(--color-light-900);
-  }
-}
-
-*::-webkit-scrollbar-thumb:horizontal {
-  background-color: var(--color-dark-300);
-  border: 3px solid var(--color-dark-900);
-  border-radius: 3px;
-
-  :hover {
-    background-color: var(--color-light-900);
-  }
 }
