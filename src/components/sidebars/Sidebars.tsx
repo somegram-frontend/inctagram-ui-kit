@@ -2,6 +2,7 @@ import React from 'react'
 
 import s from './sidebars.module.scss'
 
+import { Typography } from '../'
 import {
   CreateIcon,
   FavoriteIcon,
@@ -12,49 +13,40 @@ import {
   SearchIcon,
   StatisticIcon,
 } from '../../assets/icons'
+
 export const Sidebars = () => {
   return (
     <div className={s.box}>
       <div className={s.content}>
         <ul>
-          {/*TODO will change li to Typography as li with variant medium_text 14*/}
-          <li>
-            <HomeIcon />
-            Home
-          </li>
-          <li>
-            <CreateIcon />
-            Create
-          </li>
-          <li>
-            <MyProfileIcon />
-            My Profile
-          </li>
-          <li>
-            <MessengerIcon />
-            Messenger
-          </li>
-          <li>
-            <SearchIcon />
-            Search
-          </li>
+          <Typography as={'li'} variant={'medium_text14'}>
+            <HomeIcon /> Home
+          </Typography>
+          <Typography as={'li'} variant={'medium_text14'}>
+            <CreateIcon /> Create
+          </Typography>
+          <Typography as={'li'} variant={'medium_text14'}>
+            <MyProfileIcon /> My Profile
+          </Typography>
+          <Typography as={'li'} variant={'medium_text14'}>
+            <MessengerIcon /> Messenger
+          </Typography>
+          <Typography as={'li'} variant={'medium_text14'}>
+            <SearchIcon /> Search
+          </Typography>
         </ul>
         <ul>
-          <li>
-            <StatisticIcon />
-            Statistics
-          </li>
-          <li>
-            <FavoriteIcon />
-            Favorites
-          </li>
+          <Typography as={'li'} variant={'medium_text14'}>
+            <StatisticIcon /> Statistics
+          </Typography>
+          <Typography as={'li'} variant={'medium_text14'}>
+            <FavoriteIcon /> Favorites
+          </Typography>
         </ul>
-
         <ul>
-          <li>
-            <LogOutIcon />
-            Log Out
-          </li>
+          <Typography as={'li'} variant={'medium_text14'}>
+            <LogOutIcon /> Log Out
+          </Typography>
         </ul>
       </div>
     </div>
