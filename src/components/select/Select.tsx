@@ -23,7 +23,7 @@ export const Select = forwardRef<ElementRef<typeof SelectRadix.Root>, SelectProp
   const { className, disabled, label, onValueChange, options, placeholder, value, ...rest } = props
 
   return (
-    <label className={clsx(s.label, disabled && s.labelDisabled, className)}>
+    <label className={clsx(s.label, className)}>
       {label}
       <SelectRadix.Root onValueChange={onValueChange} value={value} {...rest}>
         <SelectRadix.Trigger
