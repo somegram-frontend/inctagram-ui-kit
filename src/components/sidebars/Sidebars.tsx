@@ -17,6 +17,7 @@ export const Sidebars = () => {
     <div className={s.box}>
       <div className={s.content}>
         <ul>
+          {/*TODO will change li to Typography as li with variant medium_text 14*/}
           <li>
             <HomeIcon />
             Home
