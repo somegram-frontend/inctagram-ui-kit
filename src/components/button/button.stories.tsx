@@ -18,6 +18,14 @@ export const Primary = {
   },
 }
 
+export const PrimaryDisabled = {
+  args: {
+    children: 'Button',
+    disabled: true,
+    variant: 'primary',
+  },
+}
+
 export const Secondary = {
   args: {
     children: 'Button',
@@ -51,7 +59,7 @@ export const ButtonFullWidth = {
   },
 }
 
-export const ButtonTypeA = {
+export const ButtonAsLink = {
   args: {
     as: 'a',
     children: 'Button',
