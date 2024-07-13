@@ -1,5 +1,6 @@
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef, useId } from 'react'
 
+import { Typography } from '@/components'
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 import clsx from 'clsx'
 
@@ -33,10 +34,15 @@ export const Checkbox = forwardRef<ElementRef<typeof CheckboxRadix.Root>, Checkb
             </CheckboxRadix.Indicator>
           </CheckboxRadix.Root>
         </div>
-        {label && ( //TODO change to Typography component
-          <label className={clsx(s.label, disabled && s.disabled)} htmlFor={finalId}>
+        {!!label && (
+          <Typography
+            as={'label'}
+            className={clsx(s.label, disabled && s.disabled)}
+            htmlFor={finalId}
+            variant={'regular_text14'}
+          >
             {label}
-          </label>
+          </Typography>
         )}
       </div>
     )
