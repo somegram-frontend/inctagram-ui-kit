@@ -1,0 +1,8 @@
+export { CreateIcon } from './Create'
+export { FavoriteIcon } from './Favorites'
+export { HomeIcon } from './Home'
+export { LogOutIcon } from './LogOut'
+export { MessengerIcon } from './Messenger'
+export { MyProfileIcon } from './MyProfile'
+export { SearchIcon } from './Search'
+export { StatisticIcon } from './Statistics'
