@@ -13,18 +13,18 @@ type Story = StoryObj<typeof Input>
 
 export const Default = {
   args: {
-    errorMessage: 'error',
+    errorMessage: 'Error text',
     label: 'Label',
   },
-}
+} satisfies Story
 export const PasswordInput = {
   args: {
     type: 'password',
   },
-}
+} satisfies Story
 
 export const SearchInput = {
   args: {
     search: true,
   },
-}
+} satisfies Story
