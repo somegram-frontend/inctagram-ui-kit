@@ -63,7 +63,7 @@ export const regular_text16 = {
 export const Bold_text16 = {
   args: {
     children: 'Carosserie Test Zürich Stauffacherstrasse 31 8004 Zürich, ZH, CH',
-    variant: 'Bold_text16',
+    variant: 'bold_text16',
   },
 } satisfies Story
 
@@ -77,7 +77,7 @@ export const regular_text14 = {
 export const Medium_text14 = {
   args: {
     children: 'Carosserie Test Zürich Stauffacherstrasse 31 8004 Zürich, ZH, CH',
-    variant: 'Medium_text14',
+    variant: 'medium_text14',
   },
 } satisfies Story
 
@@ -98,7 +98,7 @@ export const small_text = {
 export const Semi_bold_small_text = {
   args: {
     children: 'Carosserie Test Zürich Stauffacherstrasse 31 8004 Zürich, ZH, CH',
-    variant: 'Semi_bold_small_text',
+    variant: 'semi_bold_small_text',
   },
 } satisfies Story
 
