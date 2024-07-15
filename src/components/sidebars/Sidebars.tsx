@@ -17,38 +17,38 @@ import {
 export const Sidebars = () => {
   return (
     <div className={s.box}>
-      <nav>
+      <div className={s.content}>
         <ul>
-          <li>
+          <Typography as={'li'} variant={'medium_text14'}>
             <HomeIcon /> Home
-          </li>
-          <li>
+          </Typography>
+          <Typography as={'li'} variant={'medium_text14'}>
             <CreateIcon /> Create
-          </li>
-          <li>
+          </Typography>
+          <Typography as={'li'} variant={'medium_text14'}>
             <MyProfileIcon /> My Profile
-          </li>
-          <li>
+          </Typography>
+          <Typography as={'li'} variant={'medium_text14'}>
             <MessengerIcon /> Messenger
-          </li>
-          <li>
+          </Typography>
+          <Typography as={'li'} variant={'medium_text14'}>
             <SearchIcon /> Search
-          </li>
-          <ul></ul>
-          <li>
-            <StatisticIcon /> Statistics
-          </li>
-          <li>
-            <FavoriteIcon /> Favorites
-          </li>
-          <ul></ul>
-          <ul></ul>
-          <ul></ul>
-          <li>
-            <LogOutIcon /> Log Out
-          </li>
+          </Typography>
         </ul>
-      </nav>
+        <ul>
+          <Typography as={'li'} variant={'medium_text14'}>
+            <StatisticIcon /> Statistics
+          </Typography>
+          <Typography as={'li'} variant={'medium_text14'}>
+            <FavoriteIcon /> Favorites
+          </Typography>
+        </ul>
+        <ul>
+          <Typography as={'li'} variant={'medium_text14'}>
+            <LogOutIcon /> Log Out
+          </Typography>
+        </ul>
+      </div>
     </div>
   )
 }
