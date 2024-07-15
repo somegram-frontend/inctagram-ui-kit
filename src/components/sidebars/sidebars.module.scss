@@ -5,15 +5,16 @@
   border-right: 1px solid var(--color-dark-300);
 }
 
-.content {
+nav {
   display: flex;
   flex-direction: column;
   gap: 12px;
   align-items: center;
 
-  margin-bottom: 24px;
-
   ul {
+    display: flex;
+    flex-direction: column;
+
     margin: 0;
     padding: 22px;
     list-style-type: none;
@@ -21,20 +22,19 @@
 
   li {
     cursor: pointer;
-
     display: flex;
     align-items: center;
     justify-content: flex-start;
-
-    padding: 12px;
+    gap: 12px;
+    padding: 10px;
 
     color: var(--color-light-100);
 
-    svg {
-      width: 18px;
-      height: 20px;
-      margin-right: 10px;
-    }
+    //svg {
+    //  width: 18px;
+    //  height: 20px;
+    //  margin-right: 10px;
+    //}
 
     &:hover {
       color: var(--color-info-500);

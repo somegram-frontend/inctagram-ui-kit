@@ -17,38 +17,38 @@ import {
 export const Sidebars = () => {
   return (
     <div className={s.box}>
-      <div className={s.content}>
+      <nav>
         <ul>
-          <Typography as={'li'} variant={'medium_text14'}>
+          <li>
             <HomeIcon /> Home
-          </Typography>
-          <Typography as={'li'} variant={'medium_text14'}>
+          </li>
+          <li>
             <CreateIcon /> Create
-          </Typography>
-          <Typography as={'li'} variant={'medium_text14'}>
+          </li>
+          <li>
             <MyProfileIcon /> My Profile
-          </Typography>
-          <Typography as={'li'} variant={'medium_text14'}>
+          </li>
+          <li>
             <MessengerIcon /> Messenger
-          </Typography>
-          <Typography as={'li'} variant={'medium_text14'}>
+          </li>
+          <li>
             <SearchIcon /> Search
-          </Typography>
-        </ul>
-        <ul>
-          <Typography as={'li'} variant={'medium_text14'}>
+          </li>
+          <ul></ul>
+          <li>
             <StatisticIcon /> Statistics
-          </Typography>
-          <Typography as={'li'} variant={'medium_text14'}>
+          </li>
+          <li>
             <FavoriteIcon /> Favorites
-          </Typography>
-        </ul>
-        <ul>
-          <Typography as={'li'} variant={'medium_text14'}>
+          </li>
+          <ul></ul>
+          <ul></ul>
+          <ul></ul>
+          <li>
             <LogOutIcon /> Log Out
-          </Typography>
+          </li>
         </ul>
-      </div>
+      </nav>
     </div>
   )
 }
