@@ -7,22 +7,16 @@ import s from './button.module.scss'
 export type ButtonProps<T extends ElementType = 'button'> = {
   as?: T
   fullWidth?: boolean
-  variant?: 'outlined' | 'primary' | 'secondary'
+  variant?: 'borderless' | 'outlined' | 'primary' | 'secondary'
 } & ComponentPropsWithoutRef<T>
 
-export function Button<T extends ElementType = 'button'>({
-  as,
-  className,
-  fullWidth = false,
-  variant = 'primary',
-  ...rest
-}: ButtonProps<T>) {
-  const Component = as ?? 'button'
+export const Button = <T extends ElementType = 'button'>(props: ButtonProps<T>) => {
+  const { as: Component = 'button', className, fullWidth, variant = 'primary', ...rest } = props
 
   return (
     <Component
-      {...rest}
       className={clsx(s.button, s[variant], fullWidth && s.fullWidth, className)}
+      {...rest}
     />
   )
 }
