@@ -11,7 +11,7 @@ html {
   box-sizing: border-box;
 
   /* scroll for Mozilla Firefox */
-  @-moz-document url-prefix() {
+  @document url-prefix() {
     scrollbar-color: var(--color-dark-300) var(--color-dark-900);
     scrollbar-width: thin;
 
