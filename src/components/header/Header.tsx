@@ -1,7 +1,7 @@
 import s from './header.module.scss'
 
+import { Button, Select } from '../'
 import { Bell, EnglandFlag, RussianFlag } from '../../assets/icons'
-import { Select } from '../select/Select'
 
 type HeaderProps = {
   isAuth: boolean
@@ -31,10 +31,11 @@ export const Header = ({ isAuth }: HeaderProps) => {
   return isAuth ? (
     <header className={s.header}>
       <div className={s.logo}>Somegram</div>
-      <nav className={s.register}>
+      <div className={s.register}>
         <div className={s.bell}>
           <Bell />
         </div>
+
         <Select
           className={s.dropdown}
           options={options}
@@ -44,14 +45,14 @@ export const Header = ({ isAuth }: HeaderProps) => {
             </div>
           }
         />
-      </nav>
+      </div>
     </header>
   ) : (
     <header className={s.header}>
       <div className={s.logo}>Somegram</div>
-      <nav className={s.register}>
+      <div className={s.register}>
         <Select
-          className={s.dropdown}
+          className={s.select}
           options={options}
           placeholder={
             <div className={s.flagContainer}>
@@ -60,10 +61,10 @@ export const Header = ({ isAuth }: HeaderProps) => {
           }
         />
         <div className={s.buttons}>
-          <button className={s.button}>Log in</button>
-          <button className={s.button}>Sign up</button>
+          {/*<Button variant={'borderless'}>Log in</Button>*/}
+          <Button variant={'primary'}>Sign up</Button> <Button variant={'primary'}>Sign up</Button>
         </div>
-      </nav>
+      </div>
     </header>
   )
 }

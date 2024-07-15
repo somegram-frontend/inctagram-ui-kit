@@ -20,14 +20,11 @@
 
 .register {
   display: flex;
-  align-items: flex-end;
-
+  gap: 35px;
 }
 
-.dropdown {
-  margin-right: 20px;
+.select {
   width: 165px;
-  height: 35px;
 }
 
 .flagContainer {
@@ -36,27 +33,15 @@
   gap: 5px;
 }
 
-.button {
-  border-radius: 2px;
-  width: 100px;
-  height: 36px;
-  border: none;
-  background: #397DF6;
-  font-family: font-family, sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 150%;
-  text-align: center;
-  color: #ffffff;
-  margin-right: 24px;
-}
-
-.button:last-child {
-  margin-right: 0;
+.buttons {
+  display: flex;
+  gap: 25px;
 }
 
 .bell {
-  margin-right: 48px;
   color: var(--color-light-100);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 40px;
 }
