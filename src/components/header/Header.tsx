@@ -1,8 +1,6 @@
 import s from './header.module.scss'
 
-import { Bell } from '../../assets/icons/Bell'
-import { EnglandFlag } from '../../assets/icons/EnglandFlag'
-import { RussianFlag } from '../../assets/icons/RussianFlag'
+import { Bell, EnglandFlag, RussianFlag } from '../../assets/icons'
 import { Select } from '../select/Select'
 
 type HeaderProps = {
