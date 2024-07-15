@@ -37,7 +37,7 @@ export const Header = ({ isAuth }: HeaderProps) => {
         </div>
 
         <Select
-          className={s.dropdown}
+          className={s.select}
           options={options}
           placeholder={
             <div className={s.flagContainer}>
