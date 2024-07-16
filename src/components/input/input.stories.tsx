@@ -47,7 +47,7 @@ export const SearchInput = {
         <Input
           disabled={disabled}
           errorMessage={errorMessage}
-          onChange={e => setValue(e.target.value)}
+          onChange={e => setValue(e.currentTarget.value)}
           onInputClear={() => setValue('')}
           search={search}
           value={value}
