@@ -1,24 +1,24 @@
 .box {
   display: flex;
   flex-direction: column;
-
-  // border: 1px solid red;
 }
 
 .label {
   color: var(--color-light-900);
 }
 
+.disabledLabel {
+  color: var(--color-dark-100);
+}
+
 .inputContainer {
+  position: relative;
   display: flex;
   width: 279px;
-  border: 1px solid red;
 }
 
 .input {
   all: unset;
-
-  position: relative;
 
   box-sizing: border-box;
   width: 100%;
@@ -31,14 +31,77 @@
   background-color: var(--color-dark-700);
   border: 1px solid var(--color-dark-100);
   border-radius: 2px;
+
+  &:disabled {
+    cursor: default;
+    color: var(--color-dark-100);
+    border: 1px solid var(--color-dark-100);
+  }
+
+  &:hover:not(&:disabled) {
+    border: 1px solid var(--color-light-900);
+  }
+
+  &:focus:not(&:disabled) {
+    border: 2px solid var(--color-info-500);
+  }
+
+  &:active:not(&:disabled) {
+    border: 1px solid var(--color-light-100);
+  }
+}
+
+.password {
+  padding-right: 40px;
 }
 
 .eyeButton {
   all: unset;
 
+  cursor: pointer;
+
   position: absolute;
+  top: 6px;
   right: 12px;
 
   width: 24px;
   height: 24px;
+
+  &:disabled {
+    cursor: unset;
+    color: var(--color-dark-100);
+  }
+}
+
+.search {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  color: var(--color-light-900);
+}
+
+.disabledSearch {
+  color: var(--color-dark-100);
+}
+
+.error {
+  border: 1px solid var(--color-danger-500);
+}
+
+.clearButton {
+  cursor: pointer;
+
+  position: absolute;
+  top: 6px;
+  right: 12px;
+
+  width: 24px;
+  height: 24px;
+
+  color: var(--color-light-900);
 }
