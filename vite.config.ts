@@ -26,9 +26,6 @@ export default defineConfig({
         dir: 'dist',
         entryFileNames: '[name].js',
         format: 'es',
-        globals: {
-          react: 'React',
-        },
       },
     },
     target: 'esnext',

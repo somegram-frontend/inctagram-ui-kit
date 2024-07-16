@@ -66,9 +66,6 @@
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": false,
     "noUnusedParameters": true,
-
-    "outDir": "dist",
-
     "paths": {
       "@/*": ["./src/*"]
     }

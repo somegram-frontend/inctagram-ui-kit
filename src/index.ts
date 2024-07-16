@@ -1,5 +1,1 @@
-export { Button } from './components/button/Button'
-export { Checkbox } from './components/checkbox/Checkbox'
-export { Select } from './components/select/Select'
-export { Sidebars } from './components/sidebars/Sidebars'
-export { Typography } from './components/typography/Typography'
+export * from './components'
