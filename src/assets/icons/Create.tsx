@@ -19,14 +19,12 @@ export function CreateIcon(props: React.SVGProps<SVGSVGElement>) {
         />
         <path
           d={'M15 11h-2V9a1 1 0 0 0-2 0v2H9a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 0-2Z'}
-
           fill={'currentColor'}
         />
       </g>
       <defs>
         <clipPath id={'a'}>
           <path d={'M0 0h24v24H0z'} fill={'currentColor'} />
-
         </clipPath>
       </defs>
     </svg>

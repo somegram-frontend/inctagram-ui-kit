@@ -16,7 +16,6 @@ export function FavoriteIcon(props: React.SVGProps<SVGSVGElement>) {
         }
         fill={'currentColor'}
       />
-
     </svg>
   )
 }

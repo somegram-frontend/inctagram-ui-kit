@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Button } from '../button/button'
+import { Button } from '../'
 import { Cards } from './Cards'
 
 const meta = {
