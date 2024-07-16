@@ -14,6 +14,7 @@ const meta = {
   args: {
     disabled: false,
     label: 'Label',
+    value: 'Epam@epam.com',
   },
   component: Input,
   tags: ['autodocs'],
@@ -23,7 +24,9 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default = {} satisfies Story
+export const Default = {
+  args: {},
+} satisfies Story
 export const PasswordInput = {
   args: {
     type: 'password',
@@ -32,17 +35,21 @@ export const PasswordInput = {
 
 export const SearchInput = {
   args: {
+    errorMessage: '',
     search: true,
   },
   render: args => {
+    const { disabled, errorMessage, search } = args
     const [value, setValue] = useState('')
 
     return (
       <>
         <Input
+          disabled={disabled}
+          errorMessage={errorMessage}
           onChange={e => setValue(e.target.value)}
           onInputClear={() => setValue('')}
-          search
+          search={search}
           value={value}
         />
       </>

@@ -47,6 +47,7 @@
   }
 
   &:active:not(&:disabled) {
+    color: var(--color-light-100);
     border: 1px solid var(--color-light-100);
   }
 }
@@ -79,9 +80,12 @@
 }
 
 .searchIcon {
+  all: unset;
+
   position: absolute;
   top: 8px;
   left: 12px;
+
   color: var(--color-light-900);
 }
 
@@ -89,7 +93,16 @@
   color: var(--color-dark-100);
 }
 
+.errorSearch {
+  color: var(--color-light-100);
+}
+
+.activeSearch {
+  color: var(--color-light-100);
+}
+
 .error {
+  color: var(--color-light-100);
   border: 1px solid var(--color-danger-500);
 }
 

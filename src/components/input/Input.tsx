@@ -57,7 +57,15 @@ export const Input = forwardRef<ElementRef<'input'>, InputProps>(
           </Typography>
         )}
         <div className={s.inputContainer}>
-          {search && <Search className={clsx(s.searchIcon, disabled && s.disabledSearch)} />}
+          {search && (
+            <Search
+              className={clsx(
+                s.searchIcon,
+                disabled && s.disabledSearch,
+                errorMessage && s.errorSearch
+              )}
+            />
+          )}
           <input
             className={clsx(
               s.input,
@@ -82,7 +90,7 @@ export const Input = forwardRef<ElementRef<'input'>, InputProps>(
             <button
               className={s.eyeButton}
               disabled={disabled}
-              onClick={() => setHidePassword(prevState => !hidePassword)}
+              onClick={() => setHidePassword(hidePassword => !hidePassword)}
               type={'button'}
             >
               {hidePassword ? <Eye /> : <EyeOff />}
