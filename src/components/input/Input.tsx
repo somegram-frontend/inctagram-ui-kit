@@ -35,7 +35,7 @@ export const Input = forwardRef<ElementRef<'input'>, InputProps>(
   ) => {
     const [hidePassword, setHidePassword] = useState(true)
     const isPassword = type === 'password'
-    const setType = getType(isPassword, hidePassword)
+    const setType = isPassword && hidePassword ? 'password' : 'text'
     const showClearIcon = search && value
 
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -102,13 +102,5 @@ export const Input = forwardRef<ElementRef<'input'>, InputProps>(
     )
   }
 )
-
-const getType = (isPassword: boolean, hidePassword: boolean) => {
-  if (isPassword && hidePassword) {
-    return 'password'
-  }
-
-  return 'text'
-}
 
 Input.displayName = 'Input'

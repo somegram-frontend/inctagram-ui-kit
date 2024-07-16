@@ -14,7 +14,8 @@
 .inputContainer {
   position: relative;
   display: flex;
-  width: 279px;
+  width: 100%;
+  max-width: 279px;
 }
 
 .input {
