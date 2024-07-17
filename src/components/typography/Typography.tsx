@@ -25,13 +25,15 @@ type TypographyProps<E extends ElementType> = {
     | 'small_text'
 } & ComponentPropsWithoutRef<E>
 
-export const Typography = <E extends ElementType = 'span'>({
-  as: Component = 'span',
+export const Typography = <E extends ElementType>({
+  as,
   children,
   className,
   variant = 'large',
   ...rest
 }: TypographyProps<E>) => {
+  const Component = as ?? 'span'
+
   return (
     <Component className={clsx(s.typography, s[variant], className)} {...rest}>
       {children}
