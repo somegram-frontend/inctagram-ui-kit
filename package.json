@@ -71,8 +71,9 @@
     "vite-plugin-dts": "^3.9.1"
   },
   "dependencies": {
-    "@radix-ui/react-select": "^2.1.1",
+    "@fontsource/inter": "^5.0.19",
     "@fontsource/roboto": "^5.0.13",
+    "@radix-ui/react-select": "^2.1.1",
     "clsx": "^2.1.1",
     "sass": "^1.77.6"
   }

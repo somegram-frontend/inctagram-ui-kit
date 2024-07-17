@@ -17,13 +17,15 @@ type SelectProps = {
   onValueChange?: (value: string) => void
   options: Option[]
   placeholder?: ReactNode | string
-} & ComponentPropsWithoutRef<typeof SelectRadix.Root>
+}
 
-export const Select = forwardRef<ElementRef<typeof SelectRadix.Root>, SelectProps>((props, ref) => {
+type Props = Omit<ComponentPropsWithoutRef<typeof SelectRadix.Root>, keyof SelectProps> &
+  SelectProps
+export const Select = forwardRef<ElementRef<typeof SelectRadix.Root>, Props>((props, ref) => {
   const { className, disabled, label, onValueChange, options, placeholder, value, ...rest } = props
 
   return (
-    <label className={clsx(s.label, disabled && s.labelDisabled, className)}>
+    <label className={clsx(s.label, className)}>
       {label}
       <SelectRadix.Root onValueChange={onValueChange} value={value} {...rest}>
         <SelectRadix.Trigger
