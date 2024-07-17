@@ -11,6 +11,52 @@ html {
   box-sizing: border-box;
 }
 
+* {
+  /* scroll for Mozilla Firefox */
+  @-moz-document url-prefix() {
+    scrollbar-color: var(--color-dark-300) var(--color-dark-900);
+    scrollbar-width: thin;
+
+    :hover {
+      scrollbar-color: var(--color-light-900) var(--color-dark-900);
+    }
+  }
+
+  /* scroll for other browsers */
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--color-dark-900);
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar:horizontal {
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-dark-300);
+    border: 3px solid var(--color-dark-900);
+    border-radius: 3px;
+
+    :hover {
+      background-color: var(--color-light-900);
+    }
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    background-color: var(--color-dark-300);
+    border: 3px solid var(--color-dark-900);
+    border-radius: 3px;
+
+    :hover {
+      background-color: var(--color-light-900);
+    }
+  }
+}
+
 input,
 button,
 select,
