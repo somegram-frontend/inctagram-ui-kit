@@ -4,6 +4,8 @@ import clsx from 'clsx'
 
 import s from './textArea.module.scss'
 
+import { Typography } from '../'
+
 type Props = {
   containerClassName?: string
   error?: string
@@ -32,7 +34,11 @@ export const TextArea = forwardRef<ElementRef<'textarea'>, Props>((props, ref) =
         ref={ref}
         {...rest}
       />
-      {isError && <span className={s.errorText}>{error}</span>}
+      {isError && (
+        <Typography as={'span'} variant={'error_text'}>
+          {error}
+        </Typography>
+      )}
     </div>
   )
 })
