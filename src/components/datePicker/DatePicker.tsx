@@ -1,13 +1,40 @@
-import React, { useState } from 'react'
+import React, { type ComponentPropsWithoutRef } from 'react'
 import DatePicker from 'react-datepicker'
+
+import clsx from 'clsx'
 
 import 'react-datepicker/dist/react-datepicker.css'
 
-// CSS Modules, react-datepicker-cssmodules.css
-// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
+import s from './datePicker.module.scss'
 
-export const DatePickerComponent = () => {
-  const [startDate, setStartDate] = useState<Date | null>(new Date())
+type DatePickerProps = {
+  className?: string
+  endDate?: Date
+  setEndDate?: (date: Date | null) => void
+  setStartDate?: (date: Date | null) => void
+  startDate?: Date
+}
 
-  return <DatePicker onChange={date => setStartDate(date)} selected={startDate} />
+export const DatePickerComponent = (props: DatePickerProps) => {
+  const { className, endDate, setEndDate, setStartDate, startDate } = props
+
+  const onChangeHandler = (dates: [Date | null, Date | null]) => {
+    const [start, end] = dates
+
+    setStartDate?.(start)
+    setEndDate?.(end)
+  }
+
+  return (
+    <DatePicker
+      className={clsx(s.datePicker, className)}
+      dateFormat={'dd/MM/yyyy'}
+      endDate={endDate}
+      onChange={onChangeHandler}
+      selected={startDate}
+      selectsRange
+      showIcon
+      startDate={startDate}
+    />
+  )
 }
