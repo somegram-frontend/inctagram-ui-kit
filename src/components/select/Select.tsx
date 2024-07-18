@@ -17,17 +17,30 @@ type SelectProps = {
   onValueChange?: (value: string) => void
   options: Option[]
   placeholder?: ReactNode | string
+  small?: boolean
 } & ComponentPropsWithoutRef<typeof SelectRadix.Root>
 
-export const Select = forwardRef<ElementRef<typeof SelectRadix.Root>, SelectProps>((props, ref) => {
-  const { className, disabled, label, onValueChange, options, placeholder, value, ...rest } = props
+type Props = Omit<ComponentPropsWithoutRef<typeof SelectRadix.Root>, keyof SelectProps> &
+  SelectProps
+export const Select = forwardRef<ElementRef<typeof SelectRadix.Root>, Props>((props, ref) => {
+  const {
+    className,
+    disabled,
+    label,
+    onValueChange,
+    options,
+    placeholder,
+    small = false,
+    value,
+    ...rest
+  } = props
 
   return (
     <label className={clsx(s.label, className)}>
       {label}
       <SelectRadix.Root onValueChange={onValueChange} value={value} {...rest}>
         <SelectRadix.Trigger
-          className={clsx(s.trigger, disabled && s.triggerDisabled)}
+          className={clsx(s.trigger, disabled && s.triggerDisabled, small && s.small)}
           disabled={disabled}
           ref={ref}
         >
@@ -40,7 +53,11 @@ export const Select = forwardRef<ElementRef<typeof SelectRadix.Root>, SelectProp
           <SelectRadix.Content className={s.content} position={'popper'}>
             <SelectRadix.Viewport>
               {options.map(el => (
-                <SelectRadix.Item className={s.item} key={el.value} value={el.value}>
+                <SelectRadix.Item
+                  className={clsx(s.item, small && s.small)}
+                  key={el.value}
+                  value={el.value}
+                >
                   <SelectRadix.ItemText>{el.label}</SelectRadix.ItemText>
                 </SelectRadix.Item>
               ))}
