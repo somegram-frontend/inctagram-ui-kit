@@ -1,5 +1,5 @@
-import { type ComponentPropsWithoutRef, type ElementType, useState } from 'react'
-import ReCAPTCHA from 'react-google-recaptcha'
+import { type ComponentPropsWithoutRef, type ElementType } from 'react'
+import { ReCAPTCHA } from 'react-google-recaptcha'
 
 export type RecaptchaProps<T extends ElementType> = ComponentPropsWithoutRef<T>
 

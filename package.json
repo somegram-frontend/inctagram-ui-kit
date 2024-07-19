@@ -21,11 +21,12 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && tsc",
+    "storybook": "storybook dev -p 6006",
+    "before push": "pnpm run format && pnpm run lint && pnpm run build",
     "format": "prettier --write src",
     "lint": "eslint src --ext .jsx,.js,.tsx,.ts  --no-error-on-unmatched-pattern --fix && stylelint --fix src/{,*/}*.{scss,css} --allow-empty-input",
+    "build": "vite build && tsc",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "files": [
