@@ -14,12 +14,14 @@ export default meta
 type Story = StoryObj<typeof DatePickerComponent>
 
 export const Default = {
-  args: {},
+  args: {
+    label: 'Label',
+  },
   render: args => {
-    const {} = args
+    const { label } = args
     const [startDate, setStartDate] = useState<Date | null>(null)
 
-    return <DatePickerComponent setStartDate={setStartDate} startDate={startDate} />
+    return <DatePickerComponent label={label} setStartDate={setStartDate} startDate={startDate} />
   },
 } satisfies Story
 

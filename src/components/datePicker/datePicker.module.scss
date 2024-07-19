@@ -1,3 +1,78 @@
+.box {
+  position: relative;
+  width: 100%;
+  border: 1px solid red;
+}
+
 .datePicker {
-  color: black;
+  all: unset;
+
+  box-sizing: border-box;
+  max-width: 158px;
+  padding-right: 59px;
+  padding-left: 12px;
+
+  color: white;
+
+  background-color: var(--color-dark-700);
+  border: 1px solid var(--color-dark-300);
+  border-radius: 2px;
+}
+
+.calendarIcon {
+  position: absolute;
+  left: 122px;
+  color: white;
+}
+
+.calendar {
+  position: absolute;
+
+  float: left;
+
+  width: 300px;
+  height: 100%;
+  max-height: 348px;
+  padding: 16px 24px;
+
+  text-align: center;
+
+  border: 1px solid red;
+}
+
+.days {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 35px;
+  height: 35px;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+:global(.react-datepicker__month-container) {
+  width: 100%;
+  max-width: 252px;
+}
+
+:global(.react-datepicker__day) {
+  color: white;
+}
+
+:global(.react-datepicker__day-names) {
+  display: flex;
+}
+
+:global(.react-datepicker__day-name) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 40px;
+  margin: 0;
 }
