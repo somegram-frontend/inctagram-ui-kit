@@ -1,4 +1,10 @@
-import React, { type ComponentPropsWithoutRef, type ElementRef, forwardRef, useState } from 'react'
+import React, {
+  type ComponentPropsWithoutRef,
+  type ElementRef,
+  type ReactNode,
+  forwardRef,
+  useState,
+} from 'react'
 
 import clsx from 'clsx'
 
@@ -12,6 +18,7 @@ import { Typography } from '../typography/Typography'
 
 export type InputProps = {
   errorMessage?: string
+  icon?: ReactNode
   label?: string
   onInputClear?: (value: string) => void
   search?: boolean
@@ -23,6 +30,7 @@ export const Input = forwardRef<ElementRef<'input'>, InputProps>(
       className,
       disabled,
       errorMessage,
+      icon,
       label,
       onChange,
       onInputClear,
@@ -96,6 +104,7 @@ export const Input = forwardRef<ElementRef<'input'>, InputProps>(
               {hidePassword ? <Eye /> : <EyeOff />}
             </button>
           )}
+          {icon && <div>{icon}</div>}
         </div>
         <div>{errorMessage && <Typography variant={'error_text'}>{errorMessage}</Typography>}</div>
       </div>

@@ -9,6 +9,7 @@ import { enGB } from 'date-fns/locale'
 import s from './datePicker.module.scss'
 
 import SvgCalendar from '../../assets/icons/Calendar'
+import { Input, type InputProps } from '../input/Input'
 import { Typography } from './../typography'
 
 type DatePickerProps = {
@@ -41,27 +42,43 @@ export const DatePickerComponent = (props: DatePickerProps) => {
 
   return (
     <div className={s.box}>
-      {label && <Typography variant={'regular_text14'}>label</Typography>}
       <DatePicker
         calendarClassName={s.calendar}
         className={s.datePicker}
+        // customInput={<Input className={s.input} />}
+        customInput={<RenderCustomInput />}
         dateFormat={'dd/MM/yyyy'}
         dayClassName={(date: Date) => s.days}
         endDate={endDate}
-        icon={<SvgCalendar className={clsx(s.calendarIcon, className)} />}
+        // icon={<SvgCalendar className={s.calendarIcon} />}
         locale={enGB}
         onChange={onChangeHandler}
-        renderCustomHeader={renderCustomHeader}
+        renderCustomHeader={RenderCustomHeader}
         selected={startDate}
         selectsRange={isRange}
-        showIcon
         startDate={startDate}
       />
     </div>
   )
 }
 
-const renderCustomHeader = ({
+const RenderCustomInput = ({ ...rest }: InputProps) => {
+  return (
+    <div className={s.inputContainer}>
+      <Input
+        className={s.input}
+        icon={<SvgCalendar className={s.calendarIcon} />}
+        label={'label'}
+        {...rest}
+      />
+      {/*<div className={s.calendarIcon}>*/}
+      {/*  <SvgCalendar />*/}
+      {/*</div>*/}
+    </div>
+  )
+}
+
+const RenderCustomHeader = ({
   changeMonth,
   changeYear,
   date,

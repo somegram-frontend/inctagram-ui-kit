@@ -1,5 +1,5 @@
 .box {
-  position: absolute;
+  //position: absolute;
 
   width: 100%;
   max-width: 300px;
@@ -22,9 +22,18 @@
   border-radius: 2px;
 }
 
+.inputContainer {
+  position: relative;
+  border: 1px solid red;
+}
+
+.input {
+}
+
 .calendarIcon {
   position: absolute;
-  left: 122px;
+  top: 6px;
+  right: 12px;
   color: white;
 }
 
