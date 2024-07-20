@@ -1,7 +1,10 @@
 import DatePicker, { type ReactDatePickerCustomHeaderProps } from 'react-datepicker'
 
-import { format } from '@storybook/blocks'
 import clsx from 'clsx'
+import { format } from 'date-fns'
+import { enGB } from 'date-fns/locale'
+
+// import 'react-datepicker/dist/react-datepicker.css'
 
 import s from './datePicker.module.scss'
 
@@ -41,12 +44,12 @@ export const DatePickerComponent = (props: DatePickerProps) => {
       {label && <Typography variant={'regular_text14'}>label</Typography>}
       <DatePicker
         calendarClassName={s.calendar}
-        className={clsx(s.datePicker, className)}
+        className={s.datePicker}
         dateFormat={'dd/MM/yyyy'}
         dayClassName={(date: Date) => s.days}
         endDate={endDate}
         icon={<SvgCalendar className={clsx(s.calendarIcon, className)} />}
-        locale={'ru'}
+        locale={enGB}
         onChange={onChangeHandler}
         renderCustomHeader={renderCustomHeader}
         selected={startDate}
@@ -67,7 +70,7 @@ const renderCustomHeader = ({
 }: ReactDatePickerCustomHeaderProps) => {
   return (
     <div className={s.headerContainer}>
-      <div>{format(date.getFullYear())}</div>
+      <div className={s.monthsYear}>{format(date, 'LLLL y')}</div>
       <button onClick={decreaseMonth} type={'button'}>
         {'<'}
       </button>
