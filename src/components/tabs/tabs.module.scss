@@ -1,0 +1,65 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  .root {
+    width: max-content;
+
+    &:has(:focus-visible) {
+      border-radius: 2px;
+      outline: 2px solid var(--color-info-700);
+      outline-offset: -1px;
+    }
+
+    .trigger {
+      all: unset;
+      position: relative;
+      z-index: 1;
+
+      cursor: pointer;
+
+      padding: 8px 24px;
+      color: var(--color-dark-100);
+
+      background-color: transparent;
+
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: var(--color-info-900);
+        opacity: 0.15;
+      }
+
+      &:active {
+        background-color: var(--color-info-100);
+        opacity: 0.15;
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        background-color: var(--color-dark-100);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+      }
+
+      &[data-state='active'] {
+        color: var(--color-info-500);
+        &::before {
+          background-color: var(--color-info-500);
+        }
+      }
+
+      &[data-disabled] {
+        cursor: initial;
+        color: var(--color-dark-300);
+        &::before {
+          background-color: var(--color-dark-300);
+        }
+      }
+    }
+  }
+}
