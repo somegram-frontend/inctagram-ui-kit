@@ -9,8 +9,10 @@ import { enGB } from 'date-fns/locale'
 import s from './datePicker.module.scss'
 
 import SvgCalendar from '../../assets/icons/Calendar'
+import ChevronLeft from '../../assets/icons/ChevronLeft'
+import ChevronRight from '../../assets/icons/ChevronRight'
 import { Input, type InputProps } from '../input/Input'
-import { Typography } from './../typography'
+import { Typography } from '../typography/Typography'
 
 type DatePickerProps = {
   className?: string
@@ -36,21 +38,14 @@ export const DatePickerComponent = (props: DatePickerProps) => {
     }
   }
 
-  const classNames = {
-    day: () => s.days,
-  }
-
   return (
-    <div className={s.box}>
+    <div className={clsx(s.box, className)}>
       <DatePicker
         calendarClassName={s.calendar}
-        className={s.datePicker}
-        // customInput={<Input className={s.input} />}
         customInput={<RenderCustomInput />}
         dateFormat={'dd/MM/yyyy'}
-        dayClassName={(date: Date) => s.days}
+        dayClassName={(date: Date) => s.monthsNames}
         endDate={endDate}
-        // icon={<SvgCalendar className={s.calendarIcon} />}
         locale={enGB}
         onChange={onChangeHandler}
         renderCustomHeader={RenderCustomHeader}
@@ -62,37 +57,32 @@ export const DatePickerComponent = (props: DatePickerProps) => {
   )
 }
 
-const RenderCustomInput = ({ ...rest }: InputProps) => {
+const RenderCustomInput = ({ className, ...rest }: InputProps) => {
   return (
-    <div className={s.inputContainer}>
-      <Input
-        className={s.input}
-        icon={<SvgCalendar className={s.calendarIcon} />}
-        label={'label'}
-        {...rest}
-      />
-      {/*<div className={s.calendarIcon}>*/}
-      {/*  <SvgCalendar />*/}
-      {/*</div>*/}
-    </div>
+    <Input
+      className={s.input}
+      icon={<SvgCalendar className={s.calendarIcon} />}
+      label={'label'}
+      {...rest}
+    />
   )
 }
 
 const RenderCustomHeader = ({
-  changeMonth,
-  changeYear,
   date,
   decreaseMonth,
   increaseMonth,
 }: ReactDatePickerCustomHeaderProps) => {
   return (
     <div className={s.headerContainer}>
-      <div className={s.monthsYear}>{format(date, 'LLLL y')}</div>
-      <button onClick={decreaseMonth} type={'button'}>
-        {'<'}
+      <div className={s.monthsYear}>
+        <Typography variant={'bold_text16'}>{format(date, 'LLLL y')}</Typography>{' '}
+      </div>
+      <button className={s.button} onClick={decreaseMonth} type={'button'}>
+        {<ChevronLeft />}
       </button>
-      <button onClick={increaseMonth} type={'button'}>
-        {'>'}
+      <button className={s.button} onClick={increaseMonth} type={'button'}>
+        {<ChevronRight />}
       </button>
     </div>
   )
