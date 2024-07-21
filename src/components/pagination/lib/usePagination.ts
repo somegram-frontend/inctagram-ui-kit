@@ -1,4 +1,4 @@
-import type { PaginationOption, PaginationProps } from '@/components/pagination'
+import type { PaginationOption, PaginationProps } from '../Pagination'
 
 import { useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
