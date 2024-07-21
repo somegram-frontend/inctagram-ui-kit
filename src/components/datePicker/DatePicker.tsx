@@ -9,6 +9,7 @@ import { enGB } from 'date-fns/locale'
 import s from './datePicker.module.scss'
 
 import SvgCalendar from '../../assets/icons/Calendar'
+import CalendarOutline from '../../assets/icons/CalendarOutline'
 import ChevronLeft from '../../assets/icons/ChevronLeft'
 import ChevronRight from '../../assets/icons/ChevronRight'
 import { Input, type InputProps } from '../input/Input'
@@ -44,7 +45,7 @@ export const DatePickerComponent = (props: DatePickerProps) => {
         calendarClassName={s.calendar}
         customInput={<RenderCustomInput />}
         dateFormat={'dd/MM/yyyy'}
-        dayClassName={(date: Date) => s.monthsNames}
+        dayClassName={(date: Date) => s.dayDate}
         endDate={endDate}
         locale={enGB}
         onChange={onChangeHandler}
@@ -61,7 +62,7 @@ const RenderCustomInput = ({ className, ...rest }: InputProps) => {
   return (
     <Input
       className={s.input}
-      icon={<SvgCalendar className={s.calendarIcon} />}
+      icon={<SvgCalendar className={clsx(s.calendarIcon)} />}
       label={'label'}
       {...rest}
     />
