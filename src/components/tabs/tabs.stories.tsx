@@ -12,47 +12,17 @@ const meta = {
 
 export default meta
 
+const text =
+  "Advertisers study how people learn so that they can 'teach' them to respond to their advertising. They want us to be interested, to try something, and then to do it again. These are the elements of learning: interest, experience and repetition. If an advert can achieve this, it is successful. If an advert works well, the same technique can be used to advertise different things. So, for example, in winter if the weather is cold and you see a family having a warming cup of tea and feeling cosy, you may be interested and note the name of the tea ... Here the same technique is being used as with the cool, refreshing drink."
+
 const ContentFirst = () => {
-  return (
-    <div style={{ color: 'red', maxWidth: '100%', width: '350px' }}>
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-      classical Latin literature from 45 BC, making it over 2000 years old. Richard , a Latin
-      professor at College in Virginia, looked up one of the more obscure Latin words, consectetur,
-      from a Lorem Ipsum passage, and going through the cites of the word in classical literature,
-      discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of (The
-      Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory
-      of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, ipsum dolor sit
-      , comes from a line in section 1.10.32.
-    </div>
-  )
+  return <div style={{ color: 'red', maxWidth: '100%', width: '350px' }}>{text}</div>
 }
 const ContentSecond = () => {
-  return (
-    <div style={{ color: 'blue', maxWidth: '100%', width: '350px' }}>
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-      classical Latin literature from 45 BC, making it over 2000 years old. Richard , a Latin
-      professor at Sydney College in Virginia, looked up one of the more obscure Latin words,
-      consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
-      literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
-      1.10.33 of (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
-      treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem
-      Ipsum, comes from a line in section 1.10.32.
-    </div>
-  )
+  return <div style={{ color: 'blue', maxWidth: '100%', width: '350px' }}>{text}</div>
 }
 const ContentThird = () => {
-  return (
-    <div style={{ color: 'green', maxWidth: '100%', width: '350px' }}>
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-      classical Latin literature from 45 BC, making it over 2000 years old. Richard , a Latin
-      professor at Sydney College in Virginia, looked up one of the more obscure Latin words,
-      consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
-      literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
-      1.10.33 of (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a
-      treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem
-      IpsumLorem ipsum dolor sit , comes from a line in section 1.10.32.
-    </div>
-  )
+  return <div style={{ color: 'green', maxWidth: '100%', width: '350px' }}>{text}</div>
 }
 
 const tabs: Tab[] = [
