@@ -1,4 +1,4 @@
-import type { PaginationRange } from '@/components/pagination/lib/usePagination'
+import type { PaginationRange } from '../../lib/usePagination'
 
 import { type ElementRef, forwardRef } from 'react'
 

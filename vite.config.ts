@@ -1,33 +1,29 @@
-import { join, resolve } from 'node:path'
+import { resolve } from 'path'
 
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 
-// @ts-ignore
-import { devDependencies, peerDependencies } from './package.json'
-
+import { dependencies, devDependencies } from './package.json'
+// https://vitejs.dev/config/
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, join('src', 'index.ts')),
+      // Could also be a dictionary or array of multiple entry points
+      entry: resolve(__dirname, 'src/index.ts'),
+      // the proper extensions will be added
       fileName: 'index',
-      formats: ['es', 'cjs'],
+      formats: ['es'],
+      name: 'ui-kit',
     },
-    minify: false,
     rollupOptions: {
-      // Exclude peer dependencies from the bundle to reduce bundle size
       external: [
-        ...Object.keys(peerDependencies),
-        ...Object.keys(devDependencies),
         'react/jsx-runtime',
+        ...Object.keys(dependencies),
+        ...Object.keys(devDependencies),
       ],
-      output: {
-        dir: 'dist',
-        entryFileNames: '[name].js',
-        format: 'es',
-      },
     },
+    sourcemap: true,
     target: 'esnext',
   },
   plugins: [
