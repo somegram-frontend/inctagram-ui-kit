@@ -4,66 +4,91 @@ import clsx from 'clsx'
 import { format } from 'date-fns'
 import { enGB } from 'date-fns/locale'
 
-// import 'react-datepicker/dist/react-datepicker.css'
-
+import InputStyles from '../input/input.module.scss'
 import s from './datePicker.module.scss'
 
 import SvgCalendar from '../../assets/icons/Calendar'
-import CalendarOutline from '../../assets/icons/CalendarOutline'
 import ChevronLeft from '../../assets/icons/ChevronLeft'
 import ChevronRight from '../../assets/icons/ChevronRight'
 import { Input, type InputProps } from '../input/Input'
 import { Typography } from '../typography/Typography'
 
 type DatePickerProps = {
-  className?: string
-  endDate?: Date
+  disabled?: boolean
+  endDate?: Date | undefined
+  errorMessage?: string
   label?: string
-  setEndDate?: (date: Date | null) => void
-  setStartDate: (date: Date | null) => void
-  startDate: Date
+  selectsRange?: boolean
+  setEndDate?: (date: Date | undefined) => void
+  setStartDate: (date: Date | undefined) => void
+  startDate: Date | undefined
 }
 
 export const DatePickerComponent = (props: DatePickerProps) => {
-  const { className, endDate, label, setEndDate, setStartDate, startDate } = props
-  const isRange = endDate !== undefined
+  const {
+    disabled,
+    endDate,
+    errorMessage,
+    label,
+    selectsRange,
+    setEndDate,
+    setStartDate,
+    startDate,
+  } = props
 
-  const onChangeHandler = (dates: [Date | null, Date | null] | Date) => {
+  const onChangeHandler = (dates: [Date | null, Date | null] | Date | null) => {
+    if (!dates) {
+      return
+    }
+
     if (Array.isArray(dates)) {
+      if (dates.length !== 2) {
+        return
+      }
       const [start, end] = dates
 
-      setStartDate(start)
-      setEndDate?.(end)
+      setStartDate(start || undefined)
+      setEndDate?.(end || undefined)
     } else {
       setStartDate(dates)
     }
   }
 
   return (
-    <div className={clsx(s.box, className)}>
+    <div className={s.box}>
       <DatePicker
         calendarClassName={s.calendar}
-        customInput={<RenderCustomInput />}
+        className={s.datePicker}
+        customInput={
+          <RenderCustomInput disabled={disabled} errorMessage={errorMessage} label={label} />
+        }
         dateFormat={'dd/MM/yyyy'}
         dayClassName={(date: Date) => s.dayDate}
+        disabled={disabled}
         endDate={endDate}
+        errorMessage={errorMessage}
         locale={enGB}
         onChange={onChangeHandler}
+        popperPlacement={'bottom-start'}
         renderCustomHeader={RenderCustomHeader}
         selected={startDate}
-        selectsRange={isRange}
+        selectsRange={selectsRange || undefined}
+        showPopperArrow={false}
         startDate={startDate}
+        toggleCalendarOnIconClick
       />
     </div>
   )
 }
 
-const RenderCustomInput = ({ className, ...rest }: InputProps) => {
+const RenderCustomInput = ({ className, disabled, errorMessage, label, ...rest }: InputProps) => {
   return (
     <Input
-      className={s.input}
-      icon={<SvgCalendar className={clsx(s.calendarIcon)} />}
-      label={'label'}
+      className={clsx(s.dateInput, InputStyles.input, errorMessage && s.hasError)}
+      disabled={disabled}
+      errorMessage={errorMessage}
+      icon={<SvgCalendar className={clsx(s.calendarIcon, errorMessage && s.hasError)} />}
+      label={label}
       {...rest}
     />
   )

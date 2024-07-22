@@ -1,9 +1,29 @@
 .box {
-  margin: 0;
-  border: 1px solid grey;
+  width: 100%;
 }
 
-.input {
+.dateInput {
+  width: 100%;
+  color: var(--color-light-100);
+  background-color: var(--color-dark-900);
+  border: 1px solid var(--color-dark-300);
+
+  &:focus {
+    background-color: var(--color-dark-700);
+  }
+
+  &:hover:not(&:disabled) {
+    border: 1px solid var(--color-dark-100);
+  }
+
+  &.hasError {
+    color: var(--color-danger-500);
+  }
+
+  &:disabled {
+    color: var(--color-dark-500);
+    border: 1px solid var(--color-dark-300);
+  }
 }
 
 .calendarIcon {
@@ -27,22 +47,6 @@
   background-color: var(--color-dark-700);
   border: 1px solid var(--color-dark-300);
   border-radius: 2px;
-}
-
-:global(.react-datepicker__day) {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 35px;
-  height: 35px;
-
-  color: var(--color-light-100);
-
-  &:hover {
-    background-color: var(--color-info-700);
-    border-radius: 50%;
-  }
 }
 
 .headerContainer {
@@ -75,6 +79,28 @@
   border-radius: 24px;
 }
 
+.hasError {
+  color: var(--color-danger-500);
+}
+
+:global(.react-datepicker__day) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 35px;
+  height: 35px;
+
+  color: var(--color-light-100);
+
+  outline: none;
+
+  &:hover {
+    background-color: var(--color-info-700);
+    border-radius: 50%;
+  }
+}
+
 :global(.react-datepicker__day-names) {
   display: flex;
   color: var(--color-light-900);
@@ -94,6 +120,16 @@
   color: var(--color-danger-300);
 }
 
+:global(.react-datepicker__day--keyboard-selected) {
+  border: 2px solid var(--color-info-300);
+  border-radius: 50%;
+}
+
+:global(.react-datepicker__day--selected) {
+  background-color: var(--color-info-900);
+  border-radius: 50%;
+}
+
 :global(.react-datepicker__day--today) {
   font-weight: var(--font-weight-bold);
   color: var(--color-info-500);
@@ -103,20 +139,11 @@
   color: var(--color-light-900);
 }
 
-:global(.react-datepicker__day--selected) {
-  background-color: var(--color-info-900);
-  border-radius: 18px;
-}
-
 :global(.react-datepicker__aria-live) {
   position: absolute;
   overflow: hidden;
   width: 1px;
   height: 1px;
-}
-
-:global(.react-datepicker__triangle) {
-  opacity: 0;
 }
 
 .dayDate {
