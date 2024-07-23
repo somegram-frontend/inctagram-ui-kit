@@ -88,6 +88,7 @@ a {
 
 .borderless {
   width: 100px;
+
   //height: 36px; - мешает для Heders компоненты
   color: var(--color-accent-500);
   background-color: transparent;
@@ -106,5 +107,4 @@ a {
 }
 
 .fullWidth {
-  width: 100%;
 }
