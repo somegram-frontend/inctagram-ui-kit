@@ -1,4 +1,4 @@
-import DatePicker, { type ReactDatePickerCustomHeaderProps } from 'react-datepicker'
+import ReactDatePicker, { type ReactDatePickerCustomHeaderProps } from 'react-datepicker'
 
 import clsx from 'clsx'
 import { format } from 'date-fns'
@@ -24,7 +24,7 @@ type DatePickerProps = {
   startDate: Date | undefined
 }
 
-export const DatePickerComponent = (props: DatePickerProps) => {
+export const DatePicker = (props: DatePickerProps) => {
   const {
     disabled,
     endDate,
@@ -56,7 +56,7 @@ export const DatePickerComponent = (props: DatePickerProps) => {
 
   return (
     <div className={s.box}>
-      <DatePicker
+      <ReactDatePicker
         calendarClassName={s.calendar}
         className={s.datePicker}
         customInput={

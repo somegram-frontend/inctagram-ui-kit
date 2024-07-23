@@ -2,16 +2,16 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import { useState } from 'react'
 
-import { DatePickerComponent } from './DatePicker'
+import { DatePicker } from './DatePicker'
 
 const meta = {
-  component: DatePickerComponent,
+  component: DatePicker,
   tags: ['autodocs'],
   title: 'Components/DatePickerComponent',
-} satisfies Meta<typeof DatePickerComponent>
+} satisfies Meta<typeof DatePicker>
 
 export default meta
-type Story = StoryObj<typeof DatePickerComponent>
+type Story = StoryObj<typeof DatePicker>
 
 export const Default = {
   args: {
@@ -21,7 +21,7 @@ export const Default = {
     const { label } = args
     const [startDate, setStartDate] = useState<Date | undefined>(undefined)
 
-    return <DatePickerComponent label={label} setStartDate={setStartDate} startDate={startDate} />
+    return <DatePicker label={label} setStartDate={setStartDate} startDate={startDate} />
   },
 } satisfies Story
 
@@ -35,7 +35,7 @@ export const Error = {
     const [startDate, setStartDate] = useState<Date | undefined>(undefined)
 
     return (
-      <DatePickerComponent
+      <DatePicker
         errorMessage={errorMessage}
         label={label}
         setStartDate={setStartDate}
@@ -57,7 +57,7 @@ export const DateRange = {
     const [endDate, setEndDate] = useState<Date | undefined>(undefined)
 
     return (
-      <DatePickerComponent
+      <DatePicker
         endDate={endDate}
         label={label}
         selectsRange={selectsRange}
@@ -79,7 +79,7 @@ export const Disabled = {
     const [startDate, setStartDate] = useState<Date | undefined>(undefined)
 
     return (
-      <DatePickerComponent
+      <DatePicker
         disabled={disabled}
         label={label}
         setStartDate={setStartDate}
