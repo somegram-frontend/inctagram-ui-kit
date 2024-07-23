@@ -26,6 +26,12 @@
     transition: 0.2s;
   }
 
+  &.small {
+    column-gap: 6px;
+    padding: 0 2px 0 6px;
+    font-size: var(--font-size-s);
+  }
+
   &:focus-visible:not([data-disabled]) {
     color: var(--color-light-900);
     border: 2px solid var(--color-info-500);
@@ -84,6 +90,11 @@
     padding: 6px 12px;
     outline: none;
     transition: 0.2s;
+
+    &.small {
+      padding: 0 6px;
+      font-size: var(--font-size-s);
+    }
 
     &:hover,
     &:focus-visible,
