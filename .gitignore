@@ -23,6 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
+pnpm-lock.yaml
 pnpm-lock.yaml*
 *.yaml
 *storybook.log

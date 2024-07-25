@@ -1,5 +1,3 @@
-import React from 'react'
-
 import s from './sidebars.module.scss'
 
 import { Typography } from '../'
