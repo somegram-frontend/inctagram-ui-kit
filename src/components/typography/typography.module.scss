@@ -74,7 +74,7 @@
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-m);
-  color: #4b85f9;
+  color: var(--color-info-500);
   text-decoration-line: underline;
 }
 
@@ -84,7 +84,7 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-s);
-  color: #397df6;
+  color: var(--color-info-500);
   text-decoration-line: underline;
 }
 
@@ -92,5 +92,5 @@
   font-size: var(--font-size-s);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-m);
-  color: #cc1439;
+  color: var(--color-danger-500);
 }
