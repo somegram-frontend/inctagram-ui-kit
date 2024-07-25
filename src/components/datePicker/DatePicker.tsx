@@ -11,7 +11,7 @@ import SvgCalendar from '../../assets/icons/Calendar'
 import ChevronLeft from '../../assets/icons/ChevronLeft'
 import ChevronRight from '../../assets/icons/ChevronRight'
 import { Input, type InputProps } from '../input/Input'
-import { Typography } from '../typography/Typography'
+import { Typography } from '../typography'
 
 type DatePickerProps = {
   disabled?: boolean
@@ -58,20 +58,21 @@ export const DatePicker = (props: DatePickerProps) => {
     <div className={s.box}>
       <ReactDatePicker
         calendarClassName={s.calendar}
+        calendarStartDay={1}
         className={s.datePicker}
         customInput={
           <RenderCustomInput disabled={disabled} errorMessage={errorMessage} label={label} />
         }
         dateFormat={'dd/MM/yyyy'}
-        dayClassName={(date: Date) => s.dayDate}
+        dayClassName={() => s.dayDate}
         disabled={disabled}
         endDate={endDate}
-        errorMessage={errorMessage}
         locale={enGB}
         onChange={onChangeHandler}
         popperPlacement={'bottom-start'}
         renderCustomHeader={RenderCustomHeader}
         selected={startDate}
+        selectsMultiple={undefined}
         selectsRange={selectsRange || undefined}
         showPopperArrow={false}
         startDate={startDate}
