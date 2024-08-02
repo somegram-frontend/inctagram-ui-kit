@@ -26,3 +26,4 @@ dist-ssr
 pnpm-lock.yaml
 pnpm-lock.yaml*
 *.yaml
+*storybook.log

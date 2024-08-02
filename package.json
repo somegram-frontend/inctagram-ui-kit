@@ -75,9 +75,11 @@
     "clsx": "^2.1.1",
     "react-google-recaptcha": "^3.1.0",
     "react-router-dom": "^6.25.0",
-    "sass": "^1.77.6",
     "@radix-ui/react-checkbox": "^1.0.4",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "date-fns": "^3.6.0",
+    "react-datepicker": "^7.3.0",
+    "sass": "^1.77.6"
   }
 }

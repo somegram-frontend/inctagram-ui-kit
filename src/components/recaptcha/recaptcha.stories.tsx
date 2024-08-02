@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
+import React, { useState } from 'react'
+
 import { Recaptcha } from './Recaptcha'
 
 const meta = {
@@ -26,5 +28,15 @@ export const Default = {
   args: {
     sitekey: '6LdrtRAqAAAAAOOZulAzNVZ3nynD5s-QI2rgIdes',
     theme: 'dark',
+  },
+  render: args => {
+    const [checked, setReCaptcha] = useState(null)
+    const onChangeHandler = (value: any) => setReCaptcha(value)
+
+    if (checked) {
+      alert(checked)
+    }
+
+    return <Recaptcha onChange={onChangeHandler} sitekey={args.sitekey} theme={args.theme} />
   },
 } satisfies Story
