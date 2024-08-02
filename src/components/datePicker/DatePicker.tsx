@@ -7,7 +7,7 @@ import { enGB } from 'date-fns/locale'
 import InputStyles from '../input/input.module.scss'
 import s from './datePicker.module.scss'
 
-import SvgCalendar from '../../assets/icons/Calendar'
+import CalendarOutline from '../../assets/icons/CalendarOutline'
 import ChevronLeft from '../../assets/icons/ChevronLeft'
 import ChevronRight from '../../assets/icons/ChevronRight'
 import { Input, type InputProps } from '../input/Input'
@@ -88,7 +88,7 @@ const RenderCustomInput = ({ className, disabled, errorMessage, label, ...rest }
       className={clsx(s.dateInput, InputStyles.input, errorMessage && s.hasError)}
       disabled={disabled}
       errorMessage={errorMessage}
-      icon={<SvgCalendar className={clsx(s.calendarIcon, errorMessage && s.hasError)} />}
+      icon={<CalendarOutline className={clsx(s.calendarIcon, errorMessage && s.hasError)} />}
       label={label}
       {...rest}
     />

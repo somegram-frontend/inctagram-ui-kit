@@ -2,7 +2,7 @@ import { type Ref, type SVGProps, forwardRef, memo } from 'react'
 
 const SvgCloseOutline = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
-    fill={'currentColor'}
+    fill={'none'}
     height={24}
     ref={ref}
     width={24}
@@ -19,7 +19,7 @@ const SvgCloseOutline = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>
     </g>
     <defs>
       <clipPath id={'close-outline_svg__a'}>
-        <path d={'M0 0h24v24H0z'} fill={'currentColor'} />
+        <path d={'M0 0h24v24H0z'} fill={'#fff'} />
       </clipPath>
     </defs>
   </svg>

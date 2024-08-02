@@ -44,7 +44,7 @@
   }
 
   &:focus:not(&:disabled) {
-    border: 2px solid var(--color-info-500);
+    border: 2px solid var(--color-accent-500);
   }
 
   &:active:not(&:disabled) {

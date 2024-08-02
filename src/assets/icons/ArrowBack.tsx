@@ -1,4 +1,5 @@
 import { type Ref, type SVGProps, forwardRef, memo } from 'react'
+
 const SvgArrowIosBack = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     fill={'none'}

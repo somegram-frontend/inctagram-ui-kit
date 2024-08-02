@@ -5,38 +5,47 @@
 
 .textArea {
   cursor: pointer;
+  resize: none;
+
   width: 100%;
   min-height: 84px;
   padding: 6px 12px;
-  resize: none;
-  border: 1px solid var(--color-dark-100);
-  border-radius: 2px;
-  background-color: var(--color-dark-500);
 
-  font-weight: var(--font-weight-regular);
   font-size: var(--font-size-m);
+  font-weight: var(--font-weight-regular);
   line-height: var(--line-height-m);
   color: var(--color-light-100);
-  &:hover {
-    border-color: var(--color-dark-100);
+
+  background-color: var(--color-dark-500);
+  border: 1px solid var(--color-dark-100);
+  border-radius: 2px;
+
+  &::placeholder {
     color: var(--color-light-900);
+  }
+
+  &:hover {
+    color: var(--color-light-900);
+    border-color: var(--color-dark-100);
+
     &::placeholder {
       color: var(--color-light-900);
     }
   }
+
   &:focus-visible {
+    border: 2px solid var(--color-accent-700);
     outline: none;
-    border: 2px solid var(--color-info-700);
   }
+
   &:active {
     border-color: var(--color-light-100);
   }
-  &::placeholder {
-    color: var(--color-light-900);
-  }
+
   &.error {
     border-color: var(--color-danger-500);
   }
+
   &:active,
   &:focus-visible,
   &.error {
@@ -44,9 +53,11 @@
       color: var(--color-light-100);
     }
   }
+
   &:disabled {
     color: var(--color-dark-100);
     border-color: var(--color-dark-100);
+
     &::placeholder {
       color: var(--color-dark-100);
     }
@@ -54,8 +65,8 @@
 }
 
 .label {
-  font-weight: var(--font-weight-regular);
   font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
   line-height: var(--line-height-l);
   color: var(--color-light-900);
 }

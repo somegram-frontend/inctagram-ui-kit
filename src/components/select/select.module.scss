@@ -34,7 +34,7 @@
 
   &:focus-visible:not([data-disabled]) {
     color: var(--color-light-900);
-    border: 2px solid var(--color-info-500);
+    border: 2px solid var(--color-accent-500);
     outline: none;
 
     .icon {
@@ -99,7 +99,7 @@
     &:hover,
     &:focus-visible,
     &[data-state='checked'] {
-      color: var(--color-info-500);
+      color: var(--color-accent-500);
       background-color: var(--color-dark-300);
     }
   }

@@ -35,7 +35,7 @@
     }
 
     &:hover {
-      color: var(--color-info-500);
+      color: var(--color-accent-500);
     }
 
     &:disabled {
@@ -44,7 +44,7 @@
 
     &:focus {
       color: var(--color-light-100);
-      outline: 2px solid var(--color-info-500);
+      outline: 2px solid var(--color-accent-500);
     }
   }
 }

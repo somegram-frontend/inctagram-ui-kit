@@ -10,11 +10,8 @@ import clsx from 'clsx'
 
 import s from './input.module.scss'
 
-import CloseOutline from '../../assets/icons/CloseOutline'
-import Eye from '../../assets/icons/Eye'
-import EyeOff from '../../assets/icons/EyeOff'
-import Search from '../../assets/icons/Search'
-import { Typography } from '../typography/Typography'
+import { CloseOutline, EyeOffOutline, EyeOutline, SearchOutline } from '../../assets/icons'
+import { Typography } from '../typography'
 
 export type InputProps = {
   errorMessage?: string
@@ -66,7 +63,7 @@ export const Input = forwardRef<ElementRef<'input'>, InputProps>(
         )}
         <div className={s.inputContainer}>
           {search && (
-            <Search
+            <SearchOutline
               className={clsx(
                 s.searchIcon,
                 disabled && s.disabledSearch,
@@ -101,7 +98,7 @@ export const Input = forwardRef<ElementRef<'input'>, InputProps>(
               onClick={() => setHidePassword(hidePassword => !hidePassword)}
               type={'button'}
             >
-              {hidePassword ? <Eye /> : <EyeOff />}
+              {hidePassword ? <EyeOutline /> : <EyeOffOutline />}
             </button>
           )}
           {icon && <div>{icon}</div>}

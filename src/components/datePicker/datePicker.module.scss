@@ -98,7 +98,7 @@
   outline: none;
 
   &:hover {
-    background-color: var(--color-info-700);
+    background-color: var(--color-accent-700);
     border-radius: 50%;
   }
 }
@@ -123,18 +123,18 @@
 }
 
 :global(.react-datepicker__day--keyboard-selected) {
-  border: 2px solid var(--color-info-300);
+  border: 2px solid var(--color-accent-300);
   border-radius: 50%;
 }
 
 :global(.react-datepicker__day--selected) {
-  background-color: var(--color-info-900);
+  background-color: var(--color-accent-900);
   border-radius: 50%;
 }
 
 :global(.react-datepicker__day--today) {
   font-weight: var(--font-weight-bold);
-  color: var(--color-info-500);
+  color: var(--color-accent-500);
 }
 
 :global(.react-datepicker__day--outside-month) {
@@ -150,16 +150,16 @@
 
 .dayDate {
   &:global(.react-datepicker__day--selecting-range-start) {
-    background-color: var(--color-info-900);
+    background-color: var(--color-accent-900);
     border-radius: 50% 0 0 50%;
   }
 
   &:global(.react-datepicker__day--selecting-range-end) {
-    background-color: var(--color-info-900);
+    background-color: var(--color-accent-900);
     border-radius: 0 50% 50% 0;
   }
 
   &:global(.react-datepicker__day--in-selecting-range) {
-    background-color: var(--color-info-900);
+    background-color: var(--color-accent-900);
   }
 }

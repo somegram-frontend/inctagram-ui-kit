@@ -2,23 +2,29 @@ import { type Ref, type SVGProps, forwardRef, memo } from 'react'
 
 const SvgSearch = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
-    fill={'currentColor'}
-    height={20}
+    fill={'none'}
+    height={24}
     ref={ref}
-    width={20}
+    width={24}
     xmlns={'http://www.w3.org/2000/svg'}
     {...props}
   >
-    <path
-      d={
-        'm17.258 16.075-2.833-2.825a6.6 6.6 0 0 0 1.408-4.083 6.667 6.667 0 1 0-6.666 6.666 6.6 6.6 0 0 0 4.083-1.408l2.825 2.833a.833.833 0 0 0 1.183 0 .83.83 0 0 0 0-1.183M4.167 9.167a5 5 0 1 1 10 0 5 5 0 0 1-10 0'
-      }
-      fill={'currentColor'}
-    />
+    <g clipPath={'url(#search_svg__a)'}>
+      <path
+        d={
+          'm20.71 19.29-3.4-3.39A7.92 7.92 0 0 0 19 11a8 8 0 1 0-8 8 7.92 7.92 0 0 0 4.9-1.69l3.39 3.4a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095M5 11a6 6 0 1 1 12 0 6 6 0 0 1-12 0'
+        }
+        fill={'currentColor'}
+      />
+    </g>
+    <defs>
+      <clipPath id={'search_svg__a'}>
+        <path d={'M0 0h24v24H0z'} fill={'#fff'} />
+      </clipPath>
+    </defs>
   </svg>
 )
 const ForwardRef = forwardRef(SvgSearch)
 const Memo = memo(ForwardRef)
 
 export default Memo
-

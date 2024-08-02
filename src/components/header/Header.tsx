@@ -1,7 +1,7 @@
 import s from './header.module.scss'
 
 import { Button, Select } from '../'
-import { Bell, EnglandFlag, RussianFlag } from '../../assets/icons'
+import { FlagRussia, FlagUnitedKingdom, OutlineBell } from '../../assets/icons'
 
 type HeaderProps = {
   isAuth: boolean
@@ -11,7 +11,7 @@ export const Header = ({ isAuth }: HeaderProps) => {
     {
       label: (
         <div className={s.flagContainer}>
-          <EnglandFlag /> &nbsp; <span> English</span>
+          <FlagUnitedKingdom /> &nbsp; <span> English</span>
         </div>
       ),
       value: 'value1',
@@ -19,7 +19,7 @@ export const Header = ({ isAuth }: HeaderProps) => {
     {
       label: (
         <div className={s.flagContainer}>
-          <RussianFlag />
+          <FlagRussia />
           &nbsp;
           <span>Russian</span>
         </div>
@@ -33,7 +33,7 @@ export const Header = ({ isAuth }: HeaderProps) => {
       <div className={s.logo}>Somegram</div>
       <div className={s.register}>
         <div className={s.bell}>
-          <Bell />
+          <OutlineBell />
         </div>
 
         <Select
@@ -41,7 +41,7 @@ export const Header = ({ isAuth }: HeaderProps) => {
           options={options}
           placeholder={
             <div className={s.flagContainer}>
-              <EnglandFlag /> &nbsp; <span> English</span>
+              <FlagUnitedKingdom /> &nbsp; <span> English</span>
             </div>
           }
         />
@@ -56,7 +56,7 @@ export const Header = ({ isAuth }: HeaderProps) => {
           options={options}
           placeholder={
             <div className={s.flagContainer}>
-              <EnglandFlag /> &nbsp; <span> English</span>
+              <FlagUnitedKingdom /> &nbsp; <span> English</span>
             </div>
           }
         />

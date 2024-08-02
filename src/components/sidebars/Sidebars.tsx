@@ -2,14 +2,14 @@ import s from './sidebars.module.scss'
 
 import { Typography } from '../'
 import {
-  CreateIcon,
-  FavoriteIcon,
-  HomeIcon,
-  LogOutIcon,
-  MessengerIcon,
-  MyProfileIcon,
-  SearchIcon,
-  StatisticIcon,
+  BookmarkOutline,
+  HomeOutline,
+  LogOut,
+  MessageCircleOutline,
+  PersonOutline,
+  PlusSquareOutline,
+  Search,
+  TrendingUp,
 } from '../../assets/icons'
 
 export const Sidebars = () => {
@@ -18,31 +18,31 @@ export const Sidebars = () => {
       <div className={s.content}>
         <ul>
           <Typography as={'li'} variant={'medium_text14'}>
-            <HomeIcon /> Home
+            <HomeOutline /> Home
           </Typography>
           <Typography as={'li'} variant={'medium_text14'}>
-            <CreateIcon /> Create
+            <PlusSquareOutline /> Create
           </Typography>
           <Typography as={'li'} variant={'medium_text14'}>
-            <MyProfileIcon /> My Profile
+            <PersonOutline /> My Profile
           </Typography>
           <Typography as={'li'} variant={'medium_text14'}>
-            <MessengerIcon /> Messenger
+            <MessageCircleOutline /> Messenger
           </Typography>
           <Typography as={'li'} variant={'medium_text14'}>
-            <SearchIcon /> Search
-          </Typography>
-          <ul></ul>
-          <Typography as={'li'} variant={'medium_text14'}>
-            <StatisticIcon /> Statistics
-          </Typography>
-          <Typography as={'li'} variant={'medium_text14'}>
-            <FavoriteIcon /> Favorites
+            <Search /> Search
           </Typography>
           <ul></ul>
+          <Typography as={'li'} variant={'medium_text14'}>
+            <TrendingUp /> Statistics
+          </Typography>
+          <Typography as={'li'} variant={'medium_text14'}>
+            <BookmarkOutline /> Favorites
+          </Typography>
+          <ul></ul>
           <ul></ul>
           <Typography as={'li'} variant={'medium_text14'}>
-            <LogOutIcon /> Log Out
+            <LogOut /> Log Out
           </Typography>
         </ul>
       </div>
