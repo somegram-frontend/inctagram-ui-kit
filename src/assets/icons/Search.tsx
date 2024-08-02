@@ -21,3 +21,4 @@ const ForwardRef = forwardRef(SvgSearch)
 const Memo = memo(ForwardRef)
 
 export default Memo
+

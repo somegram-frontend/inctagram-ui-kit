@@ -32,16 +32,15 @@ export const Sidebars = () => {
           <Typography as={'li'} variant={'medium_text14'}>
             <SearchIcon /> Search
           </Typography>
-        </ul>
-        <ul>
+          <ul></ul>
           <Typography as={'li'} variant={'medium_text14'}>
             <StatisticIcon /> Statistics
           </Typography>
           <Typography as={'li'} variant={'medium_text14'}>
             <FavoriteIcon /> Favorites
           </Typography>
-        </ul>
-        <ul>
+          <ul></ul>
+          <ul></ul>
           <Typography as={'li'} variant={'medium_text14'}>
             <LogOutIcon /> Log Out
           </Typography>

@@ -61,7 +61,6 @@ export const Header = ({ isAuth }: HeaderProps) => {
           }
         />
         <div className={s.buttons}>
-          {/*<Button variant={'borderless'}>Log in</Button>*/}
           <Button variant={'primary'}>Sign up</Button> <Button variant={'primary'}>Sign up</Button>
         </div>
       </div>
