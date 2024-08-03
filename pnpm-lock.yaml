@@ -38,6 +38,9 @@ dependencies:
   react-google-recaptcha:
     specifier: ^3.1.0
     version: 3.1.0(react@18.3.1)
+  react-hook-form:
+    specifier: ^7.52.2
+    version: 7.52.2(react@18.3.1)
   react-router-dom:
     specifier: ^6.25.0
     version: 6.25.1(react-dom@18.3.1)(react@18.3.1)
@@ -8308,6 +8311,15 @@ packages:
       prop-types: 15.8.1
       react: 18.3.1
       react-async-script: 1.2.0(react@18.3.1)
+    dev: false
+
+  /react-hook-form@7.52.2(react@18.3.1):
+    resolution: {integrity: sha512-pqfPEbERnxxiNMPd0bzmt1tuaPcVccywFDpyk2uV5xCIBphHV5T8SVnX9/o3kplPE1zzKt77+YIoq+EMwJp56A==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
+    dependencies:
+      react: 18.3.1
     dev: false
 
   /react-inspector@6.0.2(react@18.3.1):
