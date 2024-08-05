@@ -1,0 +1,39 @@
+import { Meta, Title, IconGallery, IconItem } from '@storybook/blocks'
+
+import * as Icons from '../assets/icons'
+
+<Meta title="Icons/Iconography" />
+
+# Iconography
+
+Icons from the library that can be used in the application.
+
+## Usage
+
+```tsx
+import {'IconName'} from '@honor-ui/inctagram-ui-kit';
+```
+
+<IconGallery>
+  {Object.entries(Icons).map(([name, Icon]) => (
+    <IconItem key={name} name={name}>
+      <div className={'iconWrapper'}>
+        <Icon />
+      </div>
+    </IconItem>
+  ))}
+</IconGallery>
+
+<style>
+  {`
+    .iconWrapper {
+    display: flex
+    }
+    .css-ngu85f {
+        margin-right: 30px
+    }
+    .css-wzniqs {
+    margin-bottom: 30px
+    }
+    `}
+</style>
