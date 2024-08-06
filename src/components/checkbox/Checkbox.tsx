@@ -14,7 +14,7 @@ export type CheckboxProps = {
 
 export const Checkbox = forwardRef<ElementRef<typeof CheckboxRadix.Root>, CheckboxProps>(
   (props, ref) => {
-    const { checked, className, disabled, id, label, ...rest } = props
+    const { checked, className, disabled, id, label, onCheckedChange, ...rest } = props
     const genID = useId()
     const finalId = id || genID
 
@@ -26,7 +26,9 @@ export const Checkbox = forwardRef<ElementRef<typeof CheckboxRadix.Root>, Checkb
             className={s.checkboxRoot}
             disabled={disabled}
             id={finalId}
+            onCheckedChange={onCheckedChange}
             ref={ref}
+            required={rest.required}
             {...rest}
           >
             <CheckboxRadix.Indicator className={s.checkboxIndicator}>
