@@ -93,7 +93,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-dark-900);
+  color: var(--color-dark-800);
 
   &[data-disabled] {
     color: var(--color-dark-100);

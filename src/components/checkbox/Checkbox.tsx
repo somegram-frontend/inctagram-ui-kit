@@ -28,7 +28,6 @@ export const Checkbox = forwardRef<ElementRef<typeof CheckboxRadix.Root>, Checkb
             id={finalId}
             onCheckedChange={onCheckedChange}
             ref={ref}
-            required={rest.required}
             {...rest}
           >
             <CheckboxRadix.Indicator className={s.checkboxIndicator}>
