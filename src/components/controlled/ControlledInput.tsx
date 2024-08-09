@@ -8,7 +8,7 @@ type Props<T extends FieldValues> = { control: Control<T> } & Omit<
 > &
   Omit<UseControllerProps<T>, 'control'>
 
-const ControlledInput = <T extends FieldValues>({
+export const ControlledInput = <T extends FieldValues>({
   control,
   name,
   shouldUnregister,
@@ -24,5 +24,3 @@ const ControlledInput = <T extends FieldValues>({
 
   return <Input {...rest} onChange={onChange} value={value}></Input>
 }
-
-export default ControlledInput
