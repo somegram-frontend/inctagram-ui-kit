@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 
-import { dependencies, devDependencies } from './package.json'
+import { dependencies, devDependencies, peerDependencies } from './package.json'
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
@@ -21,6 +21,7 @@ export default defineConfig({
         'react/jsx-runtime',
         ...Object.keys(dependencies),
         ...Object.keys(devDependencies),
+        ...Object.keys(peerDependencies),
       ],
     },
     sourcemap: true,
