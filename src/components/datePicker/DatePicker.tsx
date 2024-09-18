@@ -13,7 +13,7 @@ import ChevronRight from '../../assets/icons/ChevronRight'
 import { Input, type InputProps } from '../input/Input'
 import { Typography } from '../typography'
 
-type DatePickerProps = {
+export type DatePickerProps = {
   disabled?: boolean
   endDate?: Date | undefined
   errorMessage?: string

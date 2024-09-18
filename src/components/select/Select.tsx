@@ -11,7 +11,7 @@ export type Option = {
   label: ReactNode | string
   value: string
 }
-type SelectProps = {
+export type SelectProps = {
   className?: string
   label?: string
   onValueChange?: (value: string) => void
