@@ -84,7 +84,8 @@ export const DatePicker = (props: DatePickerProps) => {
 const RenderCustomInput = ({ className, disabled, errorMessage, label, ...rest }: InputProps) => {
   return (
     <Input
-      className={clsx(s.dateInput, InputStyles.input, errorMessage && s.hasError)}
+      // className={clsx(s.dateInput, InputStyles.input, errorMessage && s.hasError)}
+      className={clsx(s.dateInput, InputStyles, errorMessage && s.hasError)}
       disabled={disabled}
       errorMessage={errorMessage}
       icon={<CalendarOutline className={clsx(s.calendarIcon, errorMessage && s.hasError)} />}
