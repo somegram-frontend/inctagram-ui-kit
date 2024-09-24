@@ -7,9 +7,11 @@ import { enGB } from 'date-fns/locale'
 import InputStyles from '../input/input.module.scss'
 import s from './datePicker.module.scss'
 
-import CalendarOutline from '../../assets/icons/CalendarOutline'
-import ChevronLeft from '../../assets/icons/ChevronLeft'
-import ChevronRight from '../../assets/icons/ChevronRight'
+import { CalendarOutline, ChevronLeft, ChevronRight } from '../../assets/icons'
+
+// import CalendarOutline from '../../assets/icons/CalendarOutline'
+// import ChevronLeft from '../../assets/icons/ChevronLeft'
+// import ChevronRight from '../../assets/icons/ChevronRight'
 import { Input, type InputProps } from '../input/Input'
 import { Typography } from '../typography'
 

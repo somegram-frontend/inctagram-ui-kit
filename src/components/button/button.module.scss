@@ -89,7 +89,7 @@ a {
 .borderless {
   width: 100px;
 
-  //height: 36px; - мешает для Heders компоненты
+  // height: 36px; - мешает для Heders компоненты
   color: var(--color-accent-500);
   background-color: transparent;
 
@@ -101,6 +101,7 @@ a {
     color: var(--color-accent-100);
   }
 
+  // TODO add cursor: default;
   &:disabled {
     color: var(--color-accent-900);
   }
