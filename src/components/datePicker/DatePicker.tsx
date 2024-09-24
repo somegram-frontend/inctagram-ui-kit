@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import { format } from 'date-fns'
 import { enGB } from 'date-fns/locale'
 
-import InputStyles from '../input/input.module.scss'
+import inputStyles from '../input/input.module.scss'
 import s from './datePicker.module.scss'
 
 import { CalendarOutline, ChevronLeft, ChevronRight } from '../../assets/icons'
@@ -84,11 +84,10 @@ export const DatePicker = (props: DatePickerProps) => {
 const RenderCustomInput = ({ className, disabled, errorMessage, label, ...rest }: InputProps) => {
   return (
     <Input
-      // className={clsx(s.dateInput, InputStyles.input, errorMessage && s.hasError)}
-      className={clsx(s.dateInput, InputStyles, errorMessage && s.hasError)}
+      className={clsx(s.dateInput, inputStyles.input, errorMessage && s.hasError)}
       disabled={disabled}
       errorMessage={errorMessage}
-      icon={<CalendarOutline className={clsx(s.calendarIcon, errorMessage && s.hasError)} />}
+      // icon={<CalendarOutline className={clsx(s.calendarIcon, errorMessage && s.hasError)} />}
       label={label}
       {...rest}
     />
