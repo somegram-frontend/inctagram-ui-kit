@@ -9,9 +9,6 @@ import s from './datePicker.module.scss'
 
 import { CalendarOutline, ChevronLeft, ChevronRight } from '../../assets/icons'
 
-// import CalendarOutline from '../../assets/icons/CalendarOutline'
-// import ChevronLeft from '../../assets/icons/ChevronLeft'
-// import ChevronRight from '../../assets/icons/ChevronRight'
 import { Input, type InputProps } from '../input/Input'
 import { Typography } from '../typography'
 
