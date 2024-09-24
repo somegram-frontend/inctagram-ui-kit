@@ -12,6 +12,35 @@ import { CalendarOutline, ChevronLeft, ChevronRight } from '../../assets/icons'
 import { Input, type InputProps } from '../input/Input'
 import { Typography } from '../typography'
 
+const CustomInput = ({ className, disabled, errorMessage, label, ...rest }: InputProps) => {
+  return (
+    <Input
+      className={clsx(s.dateInput, inputStyles.input, errorMessage && s.hasError)}
+      disabled={disabled}
+      errorMessage={errorMessage}
+      // icon={<CalendarOutline className={clsx(s.calendarIcon, errorMessage && s.hasError)} />}
+      label={label}
+      {...rest}
+    />
+  )
+}
+
+const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCustomHeaderProps) => {
+  return (
+    <div className={s.headerContainer}>
+      <div className={s.monthsYear}>
+        <Typography variant={'bold_text16'}>{format(date, 'LLLL y')}</Typography>{' '}
+      </div>
+      <button className={s.button} onClick={decreaseMonth} type={'button'}>
+        {<ChevronLeft />}
+      </button>
+      <button className={s.button} onClick={increaseMonth} type={'button'}>
+        {<ChevronRight />}
+      </button>
+    </div>
+  )
+}
+
 export type DatePickerProps = {
   disabled?: boolean
   endDate?: Date | undefined
@@ -59,9 +88,7 @@ export const DatePicker = (props: DatePickerProps) => {
         calendarClassName={s.calendar}
         calendarStartDay={1}
         className={s.datePicker}
-        customInput={
-          <RenderCustomInput disabled={disabled} errorMessage={errorMessage} label={label} />
-        }
+        customInput={<CustomInput disabled={disabled} errorMessage={errorMessage} label={label} />}
         dateFormat={'dd/MM/yyyy'}
         dayClassName={() => s.dayDate}
         disabled={disabled}
@@ -69,7 +96,7 @@ export const DatePicker = (props: DatePickerProps) => {
         locale={enGB}
         onChange={onChangeHandler}
         popperPlacement={'bottom-start'}
-        renderCustomHeader={RenderCustomHeader}
+        renderCustomHeader={CustomHeader}
         selected={startDate}
         selectsMultiple={undefined}
         selectsRange={selectsRange || undefined}
@@ -77,39 +104,6 @@ export const DatePicker = (props: DatePickerProps) => {
         startDate={startDate}
         toggleCalendarOnIconClick
       />
-    </div>
-  )
-}
-
-const RenderCustomInput = ({ className, disabled, errorMessage, label, ...rest }: InputProps) => {
-  return (
-    <Input
-      className={clsx(s.dateInput, inputStyles.input, errorMessage && s.hasError)}
-      disabled={disabled}
-      errorMessage={errorMessage}
-      // icon={<CalendarOutline className={clsx(s.calendarIcon, errorMessage && s.hasError)} />}
-      label={label}
-      {...rest}
-    />
-  )
-}
-
-const RenderCustomHeader = ({
-  date,
-  decreaseMonth,
-  increaseMonth,
-}: ReactDatePickerCustomHeaderProps) => {
-  return (
-    <div className={s.headerContainer}>
-      <div className={s.monthsYear}>
-        <Typography variant={'bold_text16'}>{format(date, 'LLLL y')}</Typography>{' '}
-      </div>
-      <button className={s.button} onClick={decreaseMonth} type={'button'}>
-        {<ChevronLeft />}
-      </button>
-      <button className={s.button} onClick={increaseMonth} type={'button'}>
-        {<ChevronRight />}
-      </button>
     </div>
   )
 }
