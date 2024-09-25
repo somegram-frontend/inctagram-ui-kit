@@ -7,11 +7,11 @@ import { enGB } from 'date-fns/locale'
 import inputStyles from '../input/input.module.scss'
 import s from './datePicker.module.scss'
 
-import { CalendarOutline, ChevronLeft, ChevronRight } from '../../assets/icons'
+// import { CalendarOutline, ChevronLeft, ChevronRight } from '../../assets/icons'
+import { CalendarOutline } from '../../assets/icons'
 
 import { Input, type InputProps } from '../input/Input'
 import { Typography } from '../typography'
-import { forwardRef, ReactNode } from 'react'
 
 export type DatePickerProps = {
   disabled?: boolean
@@ -80,43 +80,18 @@ export const DatePicker = (props: DatePickerProps) => {
   )
 }
 
-// const CustomInput = ({ className, disabled, errorMessage, label, ...rest }: InputProps) => {
-//   return (
-//     <Input
-//       className={clsx(s.dateInput, inputStyles.input, errorMessage && s.hasError)}
-//       disabled={disabled}
-//       errorMessage={errorMessage}
-//       icon={<CalendarOutline className={clsx(s.calendarIcon, errorMessage && s.hasError)} />}
-//       label={label}
-//       {...rest}
-//     />
-//   )
-// }
-
-type CustomInputProps = {
-  disabled?: boolean
-  label?: ReactNode
-  required?: boolean
-  errorMessage?: string
+const CustomInput = ({ className, disabled, errorMessage, label, ...rest }: InputProps) => {
+  return (
+    <Input
+      className={clsx(s.dateInput, inputStyles.input, errorMessage && s.hasError)}
+      disabled={disabled}
+      errorMessage={errorMessage}
+      icon={<CalendarOutline className={clsx(s.calendarIcon, errorMessage && s.hasError)} />}
+      label={label}
+      {...rest}
+    />
+  )
 }
-
-const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
-  ({ disabled, label, required, errorMessage, ...rest }, ref) => {
-    const classNames = {
-      icon: clsx(s.icon, disabled && s.disabled),
-      inputContainer: s.inputContainer,
-    }
-
-    return (
-        <div className={classNames.inputContainer}>
-          <input disabled={disabled} ref={ref} {...rest} />
-          <div className={classNames.icon}>
-          <CalendarOutline className={clsx(s.calendarIcon, errorMessage && s.hasError)} />
-          </div>
-        </div>
-    )
-  }
-)
 
 const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCustomHeaderProps) => {
   return (
@@ -125,10 +100,10 @@ const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCus
         <Typography variant={'bold_text16'}>{format(date, 'LLLL y')}</Typography>{' '}
       </div>
       <button className={s.button} onClick={decreaseMonth} type={'button'}>
-        {<ChevronLeft />}
+        {/* {<ChevronLeft />} */}
       </button>
       <button className={s.button} onClick={increaseMonth} type={'button'}>
-        {<ChevronRight />}
+        {/* {<ChevronRight />} */}
       </button>
     </div>
   )
