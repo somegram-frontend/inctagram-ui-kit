@@ -1,6 +1,8 @@
-import ReactDatePicker, { type ReactDatePickerCustomHeaderProps } from 'react-datepicker'
+// import ReactDatePicker, { type ReactDatePickerCustomHeaderProps } from 'react-datepicker'
+import { ReactDatePickerCustomHeaderProps } from 'react-datepicker'
+import * as ReactDatePicker from 'react-datepicker'
 
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { format } from 'date-fns'
 import { enGB } from 'date-fns/locale'
 
@@ -13,6 +15,10 @@ import { CalendarOutline } from '../../assets/icons'
 import { Input, type InputProps } from '../input/Input'
 import { Typography } from '../typography'
 import { FC } from 'react'
+
+const ReactDatePickerComponent = (((ReactDatePicker.default as any).default as any) ||
+  (ReactDatePicker.default as any) ||
+  (ReactDatePicker as any)) as typeof ReactDatePicker.default
 
 export type DatePickerProps = {
   disabled?: boolean
@@ -68,7 +74,7 @@ export const DatePicker: FC<DatePickerProps> = ({
 
   return (
     <div className={s.box} {...rest}>
-      <ReactDatePicker
+      <ReactDatePickerComponent
         calendarClassName={s.calendar}
         calendarStartDay={1}
         className={s.datePicker}
