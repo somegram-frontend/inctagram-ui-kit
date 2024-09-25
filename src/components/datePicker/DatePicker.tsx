@@ -7,11 +7,11 @@ import { enGB } from 'date-fns/locale'
 import inputStyles from '../input/input.module.scss'
 import s from './datePicker.module.scss'
 
-// import { CalendarOutline, ChevronLeft, ChevronRight } from '../../assets/icons'
-import { CalendarOutline } from '../../assets/icons'
+import { CalendarOutline, ChevronLeft, ChevronRight } from '../../assets/icons'
 
 import { Input, type InputProps } from '../input/Input'
 import { Typography } from '../typography'
+import { FC } from 'react'
 
 export type DatePickerProps = {
   disabled?: boolean
@@ -24,17 +24,28 @@ export type DatePickerProps = {
   startDate: Date | undefined
 }
 
-export const DatePicker = (props: DatePickerProps) => {
-  const {
-    disabled,
-    endDate,
-    errorMessage,
-    label,
-    selectsRange,
-    setEndDate,
-    setStartDate,
-    startDate,
-  } = props
+// export const DatePicker = (props: DatePickerProps) => {
+export const DatePicker: FC<DatePickerProps> = ({
+  disabled,
+  endDate,
+  errorMessage,
+  label,
+  selectsRange,
+  setEndDate,
+  setStartDate,
+  startDate,
+  ...rest
+}) => {
+  // const {
+  //   disabled,
+  //   endDate,
+  //   errorMessage,
+  //   label,
+  //   selectsRange,
+  //   setEndDate,
+  //   setStartDate,
+  //   startDate,
+  // } = props
 
   const onChangeHandler = (dates: [Date | null, Date | null] | Date | null) => {
     if (!dates) {
@@ -55,7 +66,7 @@ export const DatePicker = (props: DatePickerProps) => {
   }
 
   return (
-    <div className={s.box}>
+    <div className={s.box} {...rest}>
       <ReactDatePicker
         calendarClassName={s.calendar}
         calendarStartDay={1}
@@ -100,10 +111,10 @@ const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCus
         <Typography variant={'bold_text16'}>{format(date, 'LLLL y')}</Typography>{' '}
       </div>
       <button className={s.button} onClick={decreaseMonth} type={'button'}>
-        {/* {<ChevronLeft />} */}
+        {<ChevronLeft />}
       </button>
       <button className={s.button} onClick={increaseMonth} type={'button'}>
-        {/* {<ChevronRight />} */}
+        {<ChevronRight />}
       </button>
     </div>
   )
