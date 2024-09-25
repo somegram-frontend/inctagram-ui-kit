@@ -7,7 +7,8 @@ import { enGB } from 'date-fns/locale'
 import inputStyles from '../input/input.module.scss'
 import s from './datePicker.module.scss'
 
-import { CalendarOutline, ChevronLeft, ChevronRight } from '../../assets/icons'
+// import { CalendarOutline, ChevronLeft, ChevronRight } from '../../assets/icons'
+import { CalendarOutline } from '../../assets/icons'
 
 import { Input, type InputProps } from '../input/Input'
 import { Typography } from '../typography'
@@ -111,10 +112,10 @@ const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCus
         <Typography variant={'bold_text16'}>{format(date, 'LLLL y')}</Typography>{' '}
       </div>
       <button className={s.button} onClick={decreaseMonth} type={'button'}>
-        {<ChevronLeft />}
+        {/* {<ChevronLeft />} */}
       </button>
       <button className={s.button} onClick={increaseMonth} type={'button'}>
-        {<ChevronRight />}
+        {/* {<ChevronRight />} */}
       </button>
     </div>
   )
