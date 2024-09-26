@@ -27,15 +27,14 @@ export type DatePickerProps = {
 
 // export const DatePicker = (props: DatePickerProps) => {
 export const DatePicker = ({
-  disabled,
+  // disabled,
   endDate,
-  errorMessage,
-  label,
-  selectsRange,
-  setEndDate,
-  setStartDate,
+  // errorMessage,
+  // label,
+  // selectsRange,
+  // setEndDate,
+  // setStartDate,
   startDate,
-  ...rest
 }: DatePickerProps) => {
   // const {
   //   disabled,
@@ -67,7 +66,7 @@ export const DatePicker = ({
   // }
 
   return (
-    <div className={s.box} {...rest}>
+    // <div className={s.box} {...rest}>
       <ReactDatePicker
         calendarClassName={s.calendar}
         calendarStartDay={1}
@@ -75,7 +74,7 @@ export const DatePicker = ({
         // customInput={<CustomInput disabled={disabled} errorMessage={errorMessage} label={label} />}
         dateFormat={'dd/MM/yyyy'}
         dayClassName={() => s.dayDate}
-        disabled={disabled}
+        // disabled={disabled}
         endDate={endDate}
         locale={enGB}
         // onChange={onChangeHandler}
@@ -100,12 +99,12 @@ export const DatePicker = ({
         // )}
         selected={startDate}
         selectsMultiple={undefined}
-        selectsRange={selectsRange || undefined}
+        // selectsRange={selectsRange || undefined}
         showPopperArrow={false}
         startDate={startDate}
-        toggleCalendarOnIconClick
+        // toggleCalendarOnIconClick
       />
-    </div>
+    // </div>
   )
 }
 
