@@ -1,18 +1,18 @@
 // import ReactDatePicker, { type ReactDatePickerCustomHeaderProps } from 'react-datepicker'
 import ReactDatePicker from 'react-datepicker'
-import { type ReactDatePickerCustomHeaderProps } from 'react-datepicker'
+// import { type ReactDatePickerCustomHeaderProps } from 'react-datepicker'
 
-import { clsx } from 'clsx'
-import { format } from 'date-fns'
+// import { clsx } from 'clsx'
+// import { format } from 'date-fns'
 import { enGB } from 'date-fns/locale'
 
-import inputStyles from '../input/input.module.scss'
+// import inputStyles from '../input/input.module.scss'
 import s from './datePicker.module.scss'
 
-import { CalendarOutline, ChevronLeft, ChevronRight } from '../../assets/icons'
+// import { CalendarOutline, ChevronLeft, ChevronRight } from '../../assets/icons'
 
-import { Input, type InputProps } from '../input/Input'
-import { Typography } from '../typography'
+// import { Input, type InputProps } from '../input/Input'
+// import { Typography } from '../typography'
 
 export type DatePickerProps = {
   disabled?: boolean
@@ -48,23 +48,23 @@ export const DatePicker = ({
   //   startDate,
   // } = props
 
-  const onChangeHandler = (dates: [Date | null, Date | null] | Date | null) => {
-    if (!dates) {
-      return
-    }
+  // const onChangeHandler = (dates: [Date | null, Date | null] | Date | null) => {
+  //   if (!dates) {
+  //     return
+  //   }
 
-    if (Array.isArray(dates)) {
-      if (dates.length !== 2) {
-        return
-      }
-      const [start, end] = dates
+  //   if (Array.isArray(dates)) {
+  //     if (dates.length !== 2) {
+  //       return
+  //     }
+  //     const [start, end] = dates
 
-      setStartDate(start || undefined)
-      setEndDate?.(end || undefined)
-    } else {
-      setStartDate(dates)
-    }
-  }
+  //     setStartDate(start || undefined)
+  //     setEndDate?.(end || undefined)
+  //   } else {
+  //     setStartDate(dates)
+  //   }
+  // }
 
   return (
     <div className={s.box} {...rest}>
@@ -72,32 +72,32 @@ export const DatePicker = ({
         calendarClassName={s.calendar}
         calendarStartDay={1}
         className={s.datePicker}
-        customInput={<CustomInput disabled={disabled} errorMessage={errorMessage} label={label} />}
+        // customInput={<CustomInput disabled={disabled} errorMessage={errorMessage} label={label} />}
         dateFormat={'dd/MM/yyyy'}
         dayClassName={() => s.dayDate}
         disabled={disabled}
         endDate={endDate}
         locale={enGB}
-        onChange={onChangeHandler}
+        // onChange={onChangeHandler}
         popperPlacement={'bottom-start'}
         // renderCustomHeader={CustomHeader}
-        renderCustomHeader={({
-          date,
-          decreaseMonth,
-          increaseMonth,
-        }: ReactDatePickerCustomHeaderProps) => (
-          <div className={s.headerContainer}>
-            <div className={s.monthsYear}>
-              <Typography variant={'bold_text16'}>{format(date, 'LLLL y')}</Typography>{' '}
-            </div>
-            <button className={s.button} onClick={decreaseMonth} type={'button'}>
-              {<ChevronLeft />}
-            </button>
-            <button className={s.button} onClick={increaseMonth} type={'button'}>
-              {<ChevronRight />}
-            </button>
-          </div>
-        )}
+        // renderCustomHeader={({
+        //   date,
+        //   decreaseMonth,
+        //   increaseMonth,
+        // }: ReactDatePickerCustomHeaderProps) => (
+        //   <div className={s.headerContainer}>
+        //     <div className={s.monthsYear}>
+        //       <Typography variant={'bold_text16'}>{format(date, 'LLLL y')}</Typography>{' '}
+        //     </div>
+        //     <button className={s.button} onClick={decreaseMonth} type={'button'}>
+        //       {<ChevronLeft />}
+        //     </button>
+        //     <button className={s.button} onClick={increaseMonth} type={'button'}>
+        //       {<ChevronRight />}
+        //     </button>
+        //   </div>
+        // )}
         selected={startDate}
         selectsMultiple={undefined}
         selectsRange={selectsRange || undefined}
@@ -109,18 +109,18 @@ export const DatePicker = ({
   )
 }
 
-const CustomInput = ({ className, disabled, errorMessage, label, ...rest }: InputProps) => {
-  return (
-    <Input
-      className={clsx(s.dateInput, inputStyles.input, errorMessage && s.hasError)}
-      disabled={disabled}
-      errorMessage={errorMessage}
-      icon={<CalendarOutline className={clsx(s.calendarIcon, errorMessage && s.hasError)} />}
-      label={label}
-      {...rest}
-    />
-  )
-}
+// const CustomInput = ({ className, disabled, errorMessage, label, ...rest }: InputProps) => {
+//   return (
+//     <Input
+//       className={clsx(s.dateInput, inputStyles.input, errorMessage && s.hasError)}
+//       disabled={disabled}
+//       errorMessage={errorMessage}
+//       icon={<CalendarOutline className={clsx(s.calendarIcon, errorMessage && s.hasError)} />}
+//       label={label}
+//       {...rest}
+//     />
+//   )
+// }
 
 // const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCustomHeaderProps) => {
 //   return (
