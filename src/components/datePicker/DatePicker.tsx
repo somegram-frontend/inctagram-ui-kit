@@ -1,5 +1,5 @@
 // import ReactDatePicker, { type ReactDatePickerCustomHeaderProps } from 'react-datepicker'
-import ReactDatePicker from 'react-datepicker'
+import DatePicker from 'react-datepicker'
 // import { type ReactDatePickerCustomHeaderProps } from 'react-datepicker'
 
 // import { clsx } from 'clsx'
@@ -26,7 +26,7 @@ import { enGB } from 'date-fns/locale'
 // }
 
 // export const DatePicker = (props: DatePickerProps) => {
-export const DatePicker = () =>
+export const DatePickerCustom = () =>
   // disabled,
   // endDate,
   // errorMessage,
@@ -68,7 +68,7 @@ export const DatePicker = () =>
 
     return (
       // <div className={s.box} {...rest}>
-      <ReactDatePicker
+      <DatePicker
         // calendarClassName={s.calendar}
         calendarStartDay={1}
         // className={s.datePicker}
