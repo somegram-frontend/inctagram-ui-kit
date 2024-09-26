@@ -1,6 +1,6 @@
 // import ReactDatePicker, { type ReactDatePickerCustomHeaderProps } from 'react-datepicker'
-import { ReactDatePickerCustomHeaderProps } from 'react-datepicker'
-import * as ReactDatePicker from 'react-datepicker'
+import ReactDatePicker from 'react-datepicker'
+import { type ReactDatePickerCustomHeaderProps } from 'react-datepicker'
 
 import { clsx } from 'clsx'
 import { format } from 'date-fns'
@@ -9,16 +9,10 @@ import { enGB } from 'date-fns/locale'
 import inputStyles from '../input/input.module.scss'
 import s from './datePicker.module.scss'
 
-// import { CalendarOutline, ChevronLeft, ChevronRight } from '../../assets/icons'
-import { CalendarOutline } from '../../assets/icons'
+import { CalendarOutline, ChevronLeft, ChevronRight } from '../../assets/icons'
 
 import { Input, type InputProps } from '../input/Input'
 import { Typography } from '../typography'
-import { FC } from 'react'
-
-const ReactDatePickerComponent = (((ReactDatePicker.default as any).default as any) ||
-  (ReactDatePicker.default as any) ||
-  (ReactDatePicker as any)) as typeof ReactDatePicker.default
 
 export type DatePickerProps = {
   disabled?: boolean
@@ -32,7 +26,7 @@ export type DatePickerProps = {
 }
 
 // export const DatePicker = (props: DatePickerProps) => {
-export const DatePicker: FC<DatePickerProps> = ({
+export const DatePicker = ({
   disabled,
   endDate,
   errorMessage,
@@ -42,7 +36,7 @@ export const DatePicker: FC<DatePickerProps> = ({
   setStartDate,
   startDate,
   ...rest
-}) => {
+}: DatePickerProps) => {
   // const {
   //   disabled,
   //   endDate,
@@ -74,7 +68,7 @@ export const DatePicker: FC<DatePickerProps> = ({
 
   return (
     <div className={s.box} {...rest}>
-      <ReactDatePickerComponent
+      <ReactDatePicker
         calendarClassName={s.calendar}
         calendarStartDay={1}
         className={s.datePicker}
@@ -86,7 +80,24 @@ export const DatePicker: FC<DatePickerProps> = ({
         locale={enGB}
         onChange={onChangeHandler}
         popperPlacement={'bottom-start'}
-        renderCustomHeader={CustomHeader}
+        // renderCustomHeader={CustomHeader}
+        renderCustomHeader={({
+          date,
+          decreaseMonth,
+          increaseMonth,
+        }: ReactDatePickerCustomHeaderProps) => (
+          <div className={s.headerContainer}>
+            <div className={s.monthsYear}>
+              <Typography variant={'bold_text16'}>{format(date, 'LLLL y')}</Typography>{' '}
+            </div>
+            <button className={s.button} onClick={decreaseMonth} type={'button'}>
+              {<ChevronLeft />}
+            </button>
+            <button className={s.button} onClick={increaseMonth} type={'button'}>
+              {<ChevronRight />}
+            </button>
+          </div>
+        )}
         selected={startDate}
         selectsMultiple={undefined}
         selectsRange={selectsRange || undefined}
@@ -111,18 +122,18 @@ const CustomInput = ({ className, disabled, errorMessage, label, ...rest }: Inpu
   )
 }
 
-const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCustomHeaderProps) => {
-  return (
-    <div className={s.headerContainer}>
-      <div className={s.monthsYear}>
-        <Typography variant={'bold_text16'}>{format(date, 'LLLL y')}</Typography>{' '}
-      </div>
-      <button className={s.button} onClick={decreaseMonth} type={'button'}>
-        {/* {<ChevronLeft />} */}
-      </button>
-      <button className={s.button} onClick={increaseMonth} type={'button'}>
-        {/* {<ChevronRight />} */}
-      </button>
-    </div>
-  )
-}
+// const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCustomHeaderProps) => {
+//   return (
+//     <div className={s.headerContainer}>
+//       <div className={s.monthsYear}>
+//         <Typography variant={'bold_text16'}>{format(date, 'LLLL y')}</Typography>{' '}
+//       </div>
+//       <button className={s.button} onClick={decreaseMonth} type={'button'}>
+//         {/* {<ChevronLeft />} */}
+//       </button>
+//       <button className={s.button} onClick={increaseMonth} type={'button'}>
+//         {/* {<ChevronRight />} */}
+//       </button>
+//     </div>
+//   )
+// }
