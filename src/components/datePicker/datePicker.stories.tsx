@@ -21,7 +21,8 @@ export const Default = {
   args: {
     label: 'Date',
   },
-  render: args => {
+  // render: args => {
+  render: () => {
     // const { label } = args
     // const [startDate, setStartDate] = useState<Date | undefined>(undefined)
 
