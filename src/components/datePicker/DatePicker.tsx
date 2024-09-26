@@ -7,78 +7,79 @@ import ReactDatePicker from 'react-datepicker'
 import { enGB } from 'date-fns/locale'
 
 // import inputStyles from '../input/input.module.scss'
-import s from './datePicker.module.scss'
+// import s from './datePicker.module.scss'
 
 // import { CalendarOutline, ChevronLeft, ChevronRight } from '../../assets/icons'
 
 // import { Input, type InputProps } from '../input/Input'
 // import { Typography } from '../typography'
 
-export type DatePickerProps = {
-  disabled?: boolean
-  endDate?: Date | undefined
-  errorMessage?: string
-  label?: string
-  selectsRange?: boolean
-  setEndDate?: (date: Date | undefined) => void
-  setStartDate: (date: Date | undefined) => void
-  startDate: Date | undefined
-}
+// export type DatePickerProps = {
+//   disabled?: boolean
+//   endDate?: Date | undefined
+//   errorMessage?: string
+//   label?: string
+//   selectsRange?: boolean
+//   setEndDate?: (date: Date | undefined) => void
+//   setStartDate: (date: Date | undefined) => void
+//   startDate: Date | undefined
+// }
 
 // export const DatePicker = (props: DatePickerProps) => {
-export const DatePicker = ({
+export const DatePicker = () =>
   // disabled,
-  endDate,
+  // endDate,
   // errorMessage,
   // label,
   // selectsRange,
   // setEndDate,
   // setStartDate,
-  startDate,
-}: DatePickerProps) => {
-  // const {
-  //   disabled,
-  //   endDate,
-  //   errorMessage,
-  //   label,
-  //   selectsRange,
-  //   setEndDate,
-  //   setStartDate,
-  //   startDate,
-  // } = props
+  // startDate,
+  // }: DatePickerProps) => {
+  {
+    // const {
+    //   disabled,
+    //   endDate,
+    //   errorMessage,
+    //   label,
+    //   selectsRange,
+    //   setEndDate,
+    //   setStartDate,
+    //   startDate,
+    // } = props
 
-  // const onChangeHandler = (dates: [Date | null, Date | null] | Date | null) => {
-  //   if (!dates) {
-  //     return
-  //   }
+    // const onChangeHandler = (dates: [Date | null, Date | null] | Date | null) => {
+    //   if (!dates) {
+    //     return
+    //   }
 
-  //   if (Array.isArray(dates)) {
-  //     if (dates.length !== 2) {
-  //       return
-  //     }
-  //     const [start, end] = dates
+    //   if (Array.isArray(dates)) {
+    //     if (dates.length !== 2) {
+    //       return
+    //     }
+    //     const [start, end] = dates
 
-  //     setStartDate(start || undefined)
-  //     setEndDate?.(end || undefined)
-  //   } else {
-  //     setStartDate(dates)
-  //   }
-  // }
+    //     setStartDate(start || undefined)
+    //     setEndDate?.(end || undefined)
+    //   } else {
+    //     setStartDate(dates)
+    //   }
+    // }
 
-  return (
-    // <div className={s.box} {...rest}>
+    return (
+      // <div className={s.box} {...rest}>
       <ReactDatePicker
-        calendarClassName={s.calendar}
+        // calendarClassName={s.calendar}
         calendarStartDay={1}
-        className={s.datePicker}
+        // className={s.datePicker}
         // customInput={<CustomInput disabled={disabled} errorMessage={errorMessage} label={label} />}
-        dateFormat={'dd/MM/yyyy'}
-        dayClassName={() => s.dayDate}
+        // dateFormat={'dd/MM/yyyy'}
+        // dayClassName={() => s.dayDate}
         // disabled={disabled}
-        endDate={endDate}
+        // endDate={endDate}
         locale={enGB}
         // onChange={onChangeHandler}
-        popperPlacement={'bottom-start'}
+        // popperPlacement={'bottom-start'}
         // renderCustomHeader={CustomHeader}
         // renderCustomHeader={({
         //   date,
@@ -97,16 +98,16 @@ export const DatePicker = ({
         //     </button>
         //   </div>
         // )}
-        selected={startDate}
-        selectsMultiple={undefined}
+        // selected={startDate}
+        // selectsMultiple={undefined}
         // selectsRange={selectsRange || undefined}
-        showPopperArrow={false}
-        startDate={startDate}
+        // showPopperArrow={false}
+        // startDate={startDate}
         // toggleCalendarOnIconClick
       />
-    // </div>
-  )
-}
+      // </div>
+    )
+  }
 
 // const CustomInput = ({ className, disabled, errorMessage, label, ...rest }: InputProps) => {
 //   return (
