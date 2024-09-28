@@ -26,7 +26,7 @@ import DatePicker from 'react-datepicker'
 // }
 
 // export const DatePicker = (props: DatePickerProps) => {
-export const DatePickerCustom = () => {
+const DatePickerCustom = () => {
   return <DatePicker />
 }
 
@@ -141,4 +141,5 @@ export const DatePickerCustom = () => {
 //   )
 // }
 
+export default DatePickerCustom
 DatePickerCustom.displayName = 'DatePickerCustom'
