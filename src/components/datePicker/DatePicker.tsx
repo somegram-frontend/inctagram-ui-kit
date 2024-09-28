@@ -1,5 +1,6 @@
 // import ReactDatePicker, { type ReactDatePickerCustomHeaderProps } from 'react-datepicker'
-import DatePicker from 'react-datepicker'
+import { FC } from 'react'
+import * as RDP from 'react-datepicker'
 // import { type ReactDatePickerCustomHeaderProps } from 'react-datepicker'
 
 // import { clsx } from 'clsx'
@@ -25,9 +26,13 @@ import DatePicker from 'react-datepicker'
 //   startDate: Date | undefined
 // }
 
+const RDPC = (((RDP.default as any).default as any) ||
+  (RDP.default as any) ||
+  (RDP as any)) as typeof RDP.default
+
 // export const DatePicker = (props: DatePickerProps) => {
-const DatePickerCustom = () => {
-  return <DatePicker />
+export const DatePickerCustom: FC = () => {
+  return <RDPC />
 }
 
 // disabled,
@@ -141,5 +146,4 @@ const DatePickerCustom = () => {
 //   )
 // }
 
-export default DatePickerCustom
 DatePickerCustom.displayName = 'DatePickerCustom'
