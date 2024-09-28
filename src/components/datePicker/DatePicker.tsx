@@ -29,6 +29,7 @@ import DatePicker from 'react-datepicker'
 export const DatePickerCustom = () => {
   return <DatePicker />
 }
+
 // disabled,
 // endDate,
 // errorMessage,
@@ -139,3 +140,5 @@ export const DatePickerCustom = () => {
 //     </div>
 //   )
 // }
+
+DatePickerCustom.displayName = 'DatePickerCustom'
