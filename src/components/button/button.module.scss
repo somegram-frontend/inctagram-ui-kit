@@ -42,6 +42,7 @@ a {
   }
 
   &:disabled {
+    cursor: default;
     color: var(--color-light-900);
     background-color: var(--color-accent-900);
   }
@@ -60,6 +61,7 @@ a {
   }
 
   &:disabled {
+    cursor: default;
     color: var(--color-light-900);
     background-color: var(--color-dark-500);
   }
@@ -81,6 +83,7 @@ a {
   }
 
   &:disabled {
+    cursor: default;
     color: var(--color-accent-900);
     border: 1px solid var(--color-accent-900);
   }
@@ -103,6 +106,7 @@ a {
 
   // TODO add cursor: default;
   &:disabled {
+    cursor: default;
     color: var(--color-accent-900);
   }
 }
